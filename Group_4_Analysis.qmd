@@ -1,3 +1,8 @@
-Hello
-
-Hi
+---
+title: " Data Analysis Group 4"
+number-sections: true
+format: 
+  html:
+    embed-resources: true
+    code-tools: true
+---
