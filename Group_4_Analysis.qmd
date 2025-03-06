@@ -7,4 +7,44 @@ format:
     code-tools: true
 ---
 
-# Introduction
+```{r}
+#| echo: false
+#| warning: false
+
+library(tidymodels)
+library(readr)
+DAProject4_2_ <- read_csv("DAProject4 (2).csv")
+View(DAProject4_2_)
+
+```
+
+# Introduction {#sec-intro}
+
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2013-2016) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+
+@sec-exploratory consists of the exploratory analysis of the survey's data and explores the potential trends between the social-economic and lifestyle factors and the BMI, and whether, there are any differences in the BMI over the given years.
+
+@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions. Through exploratory analysis and statistical tests the concluding remarks will be given in @sec-conclusion.
+
+# Exploratory Analysis {#sec-exploratory}
+
+```{r}
+#| echo: false
+#| eval: false
+
+summary(DAProject4_2_)
+
+DAProject4_2_ <- DAProject4_2_ %>%
+  mutate(
+    AgeGroup = as.factor(AgeGroup),
+    Sex = as.factor(Sex),
+    Employment = as.factor(Employment),
+    Veg = as.factor(Veg),
+    Fruit = as.factor(Fruit),
+    Year = as.factor(Year)
+  )
+```
+
+# Formal Analysis {#sec-FA}
+
+# Conclusions {#sec-conclusion}
