@@ -2,3 +2,89 @@
 
 
 
+<<<<<<< Updated upstream
+=======
+```
+
+# Introduction {#sec-intro}
+
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2013-2016) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+
+@sec-exploratory consists of the exploratory analysis of the survey's data and explores the potential trends between the social-economic and lifestyle factors and the BMI, and whether, there are any differences in the BMI over the given years.
+
+@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions. Through exploratory analysis and statistical tests the concluding remarks will be given in @sec-conclusion.
+
+# Exploratory Analysis {#sec-exploratory}
+
+```{r}
+#| echo: false
+#| eval: false
+
+summary(DAProject4_2_)
+
+DAProject4_2_ <- DAProject4_2_ %>%
+  mutate(
+    AgeGroup = as.factor(AgeGroup),
+    Sex = as.factor(Sex),
+    Employment = as.factor(Employment),
+    Veg = as.factor(Veg),
+    Fruit = as.factor(Fruit),
+    Year = as.factor(Year)
+  )
+```
+
+# Formal Analysis {#sec-FA}
+
+## Regression Model
+
+To analyze the relationship between **BMI** and various socio-economic and lifestyle factors, we fit a multiple regression model with **BMI** as the response variable and **AgeGroup, Sex, Employment, Veg, Fruit, and Year** as predictor variables.
+
+```{r}
+# Fit the multiple regression model
+bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject4_2_)
+
+# Display the model summary
+tidy_bmi_model <- get_regression_table(bmi_model)
+gt(tidy_bmi_model) |> fmt_number(decimals = 3)
+```
+
+From the regression results, we can analyze the significance of each predictor and their impact on BMI.
+
+## Model Diagnostics
+
+To ensure that the assumptions of the regression model hold, we analyze the residuals.
+
+```{r}
+# Residual plots
+par(mfrow = c(2, 2))
+plot(bmi_model)
+par(mfrow = c(1, 1))
+```
+
+The residual plots help check for normality, homoscedasticity, and potential outliers.
+
+## Interaction Effects
+
+We also check for potential interactions between **Sex and Employment** and **Veg and Fruit** to see if dietary factors interact with employment status or gender.
+
+```{r}
+# Interaction model
+interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject4_2_)
+
+# Compare models
+anova(bmi_model, interaction_model)
+```
+
+The **ANOVA test** helps determine whether adding interaction terms significantly improves the model.
+
+## Summary of Findings
+
+- Certain variables significantly impact **BMI**.
+- Interaction effects between dietary intake and employment status are explored.
+- Diagnostic plots confirm that assumptions hold, ensuring the model's reliability.
+
+The next section will provide concluding remarks based on these findings.
+
+# Conclusions {#sec-conclusion}
+
+>>>>>>> Stashed changes
