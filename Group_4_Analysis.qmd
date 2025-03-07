@@ -1,10 +1,4 @@
-
-<<<<<<< Updated upstream
-=======
 # Introduction
 
-# hend 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
+
