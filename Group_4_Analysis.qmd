@@ -63,42 +63,22 @@ DAProject8 |>
 
 # Formal Analysis {#sec-FA}
 
-<<<<<<< HEAD
-We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
-
-$$ \begin{align}
-y_{i} &= \alpha + \beta_1 \cdot x_{1i} + \beta_2 \cdot x_{2i} + \beta_3 \cdot x_{3i} + \beta_4 \cdot x_{4i} + \beta_5 \cdot x_{5i} + \beta_6 \cdot x_{6i} + \epsilon_i, \\
-=======
-<<<<<<< Updated upstream
-=======
 We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
 
 $$ \begin{align}
 y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \beta_{Veg}\cdot \mathbb{I}_{Veg}(x) + \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
->>>>>>> Abby
 & ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n \\
 \end{align}$$
 
 where:
 
-<<<<<<< HEAD
-\- $(\alpha)$ is the intercept of the regression line,
-
-\- $( \beta_1, \beta_2, …, \beta_6 )$ are the coefficients for **AgeGroup, Sex, Employment, Veg, Fruit, and Year**,
-
-\- $( \epsilon_i )$ represents normally distributed errors.
-
-## Stepwise Regression Model Selection
-
-To refine the model, we apply **stepwise regression** using the Akaike Information Criterion (AIC) to identify the best-fitting model.
-
-```{r}
-=======
 -   $\alpha$ is the intercept of the regression line for the baseline of fruit and veg being 'no'.
 
--    $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
+-   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
 
-    -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+```         
+-   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+```
 
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
@@ -120,7 +100,7 @@ To refine the model, we apply **stepwise regression** using the Akaike Informati
 
     -   $\mathbb{I}_{Year}(x)$ is an indicator function indicating the year.
 
--    $\epsilon_i$ represents normally distributed errors.
+-   $\epsilon_i$ represents normally distributed errors.
 
 To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
 
@@ -128,7 +108,6 @@ To refine the model, since there are so many variables, we apply stepwise regres
 #| warning: false
 #| echo: false
 
->>>>>>> Abby
 library(ggplot2)
 library(tidyverse)
 library(gt)
@@ -136,21 +115,6 @@ library(MASS)
 library(moderndive)
 
 #regression model
-<<<<<<< HEAD
-bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject4_2_)
-
-#Stepwise selection using backward elimination
-step_model <- stepAIC(bmi_model, direction = "backward", trace = FALSE)
-```
-
-The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit.
-
-## Regression Coefficients
-
-The final regression model results are summarized in Table @tbl-regtable.
-
-```{r}
-=======
 bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8)
 bmi_model
 #Stepwise selection using backward elimination
@@ -168,50 +132,24 @@ The final regression model results are summarized in @tbl-regtable
 #| tbl-cap: Estimates of the regression model coeeficients
 
 
->>>>>>> Abby
 # Display final selected model coefficients
 gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
 
 @tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
 
-<<<<<<< HEAD
-## Regression Equations
-
-Based on the final model, the estimated regression equations for BMI are given as:
-
-$\begin{align} \widehat{BMI}_{\text{base}} &= \beta_0 + \beta_1 \cdot \text{AgeGroup} + \beta_2 \cdot \text{Sex} + \beta_3 \cdot \text{Employment} + \beta_4 \cdot \text{Veg} + \beta_5 \cdot \text{Fruit} + \beta_6 \cdot \text{Year} \\ \end{align}$
-
-where coefficients $(\beta )$ are estimated from the regression model.
-
-## Model Diagnostics
-
-To ensure that regression assumptions hold, we analyze residuals.
-
-```{r}
-=======
 To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
 
 ```{r}
 #|echo: false
 #|label: fig-residassump
 
->>>>>>> Abby
 # Residual plots
 par(mfrow = c(2, 2))
 plot(step_model)
 par(mfrow = c(1, 1))
 ```
 
-<<<<<<< HEAD
-The residual plots help check for **normality, homoscedasticity, and potential outliers**.
-
-## Residual Analysis
-
-To confirm the validity of model assumptions, we visualize the residual distribution.
-
-```{r}
-=======
 The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.
 
 To confirm the validity of model assumptions, we visualise the normality of the residuals in the histogram below.
@@ -220,7 +158,6 @@ To confirm the validity of model assumptions, we visualise the normality of the 
 #| echo: false
 #| label: fig-normalresid
 
->>>>>>> Abby
 # Plot residuals
 library(ggplot2)
 ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals)) +
@@ -228,17 +165,6 @@ ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals))
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
-<<<<<<< HEAD
-The histogram verifies that the residuals are approximately normally distributed.
-
-## Interaction Effects
-
-We test for interactions between **Sex and Employment**, and **Veg and Fruit** to explore whether dietary factors interact with employment status or gender.
-
-```{r}
-# Interaction model
-interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject4_2_)
-=======
 The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
 
 ## Interaction Effects
@@ -249,25 +175,16 @@ We test for interactions between Sex and Employment, and Veg and Fruit to explor
 #| echo: false
 # Interaction model
 interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject8)
->>>>>>> Abby
 
 # Compare models
 anova(step_model, interaction_model)
 ```
 
-<<<<<<< HEAD
-The **ANOVA test** assesses whether including interaction terms significantly improves model fit.
-
-## Summary of Findings
-
--   Certain socio-economic and lifestyle factors significantly impact **BMI**.
-=======
 The ANOVA test assesses whether including interaction terms significantly improves model fit.
 
 ## Summary of Findings
 
 -   Certain socio-economic and lifestyle factors significantly impact BMI.
->>>>>>> Abby
 -   Interaction effects between dietary intake and employment status were explored.
 -   Stepwise selection refined the model for better interpretability.
 -   Diagnostic plots confirm that regression assumptions hold.
@@ -275,8 +192,4 @@ The ANOVA test assesses whether including interaction terms significantly improv
 
 The next section will provide concluding remarks based on these findings.
 
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> Abby
 # Conclusions {#sec-conclusion}
