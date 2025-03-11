@@ -13,14 +13,14 @@ format:
 
 library(tidymodels)
 library(readr)
-DAProject4_2_ <- read_csv("DAProject4 (2).csv")
-View(DAProject4_2_)
+DAProject8 <- read_csv("DAProject8.csv")
+View(DAProject8)
 
 ```
 
 # Introduction {#sec-intro}
 
-Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2013-2016) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
 
 @sec-exploratory consists of the exploratory analysis of the survey's data and explores the potential trends between the social-economic and lifestyle factors and the BMI, and whether, there are any differences in the BMI over the given years.
 
@@ -32,9 +32,9 @@ Obesity health concerns are a major issue in Scotland impacting the healthy well
 #| echo: false
 #| eval: false
 
-summary(DAProject4_2_)
+summary(DAProject8)
 
-DAProject4_2_ <- DAProject4_2_ %>%
+DAProject8 <- DAProject8 %>%
   mutate(
     AgeGroup = as.factor(AgeGroup),
     Sex = as.factor(Sex),
@@ -43,19 +43,45 @@ DAProject4_2_ <- DAProject4_2_ %>%
     Fruit = as.factor(Fruit),
     Year = as.factor(Year)
   )
+
+```
+
+```{r}
+#| echo: false
+#| label: tbl-sum
+#| tbl-cap: Summary Statistics of Variables
+
+DAProject8 |>
+   summarise('BMI.Mean' = mean(BMI),
+             'BMI.Median' = median(BMI),
+             .by = c(AgeGroup, Sex, Employment)) |>
+  knitr:: kable(digits = 3,
+                caption = "BMI summarised  by factors",
+                booktab = TRUE)
+
 ```
 
 # Formal Analysis {#sec-FA}
 
+<<<<<<< HEAD
 We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
 
 $$ \begin{align}
 y_{i} &= \alpha + \beta_1 \cdot x_{1i} + \beta_2 \cdot x_{2i} + \beta_3 \cdot x_{3i} + \beta_4 \cdot x_{4i} + \beta_5 \cdot x_{5i} + \beta_6 \cdot x_{6i} + \epsilon_i, \\
+=======
+<<<<<<< Updated upstream
+=======
+We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
+
+$$ \begin{align}
+y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \beta_{Veg}\cdot \mathbb{I}_{Veg}(x) + \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
+>>>>>>> Abby
 & ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n \\
 \end{align}$$
 
 where:
 
+<<<<<<< HEAD
 \- $(\alpha)$ is the intercept of the regression line,
 
 \- $( \beta_1, \beta_2, …, \beta_6 )$ are the coefficients for **AgeGroup, Sex, Employment, Veg, Fruit, and Year**,
@@ -67,6 +93,42 @@ where:
 To refine the model, we apply **stepwise regression** using the Akaike Information Criterion (AIC) to identify the best-fitting model.
 
 ```{r}
+=======
+-   $\alpha$ is the intercept of the regression line for the baseline of fruit and veg being 'no'.
+
+-    $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
+
+    -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+
+-   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
+
+    -   $\mathbb{I}_{Sex}(x) = \{\begin{array}{rcl} 1&\mbox{for male} \\ 0&otherwise \end{array}$
+
+-   $\beta_{Employment}$ is the intercept of the regression line for the specified employment status.
+
+    -   $\mathbb{I}_{Employment}(x)$ is an indicator function indicating the Employment Status.
+
+-   $\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.
+
+    -   $\mathbb{I}_{Veg}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+
+-   $\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.
+
+    -   $\mathbb{I}_{Fruit}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+
+-   $\beta_{Year}$ is the intercept of the regression line for the year.
+
+    -   $\mathbb{I}_{Year}(x)$ is an indicator function indicating the year.
+
+-    $\epsilon_i$ represents normally distributed errors.
+
+To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
+
+```{r}
+#| warning: false
+#| echo: false
+
+>>>>>>> Abby
 library(ggplot2)
 library(tidyverse)
 library(gt)
@@ -74,6 +136,7 @@ library(MASS)
 library(moderndive)
 
 #regression model
+<<<<<<< HEAD
 bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject4_2_)
 
 #Stepwise selection using backward elimination
@@ -87,12 +150,32 @@ The stepwise selection process determines whether all predictors should be inclu
 The final regression model results are summarized in Table @tbl-regtable.
 
 ```{r}
+=======
+bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8)
+bmi_model
+#Stepwise selection using backward elimination
+step_model <- stepAIC(bmi_model, direction = "backward", trace = FALSE)
+AIC <- step_model$anova
+```
+
+The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56, thus is the chosen model.
+
+The final regression model results are summarized in @tbl-regtable
+
+```{r}
+#| echo: false
+#| label: tbl-regtable
+#| tbl-cap: Estimates of the regression model coeeficients
+
+
+>>>>>>> Abby
 # Display final selected model coefficients
 gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
 
 @tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
 
+<<<<<<< HEAD
 ## Regression Equations
 
 Based on the final model, the estimated regression equations for BMI are given as:
@@ -106,12 +189,21 @@ where coefficients $(\beta )$ are estimated from the regression model.
 To ensure that regression assumptions hold, we analyze residuals.
 
 ```{r}
+=======
+To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
+
+```{r}
+#|echo: false
+#|label: fig-residassump
+
+>>>>>>> Abby
 # Residual plots
 par(mfrow = c(2, 2))
 plot(step_model)
 par(mfrow = c(1, 1))
 ```
 
+<<<<<<< HEAD
 The residual plots help check for **normality, homoscedasticity, and potential outliers**.
 
 ## Residual Analysis
@@ -119,6 +211,16 @@ The residual plots help check for **normality, homoscedasticity, and potential o
 To confirm the validity of model assumptions, we visualize the residual distribution.
 
 ```{r}
+=======
+The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.
+
+To confirm the validity of model assumptions, we visualise the normality of the residuals in the histogram below.
+
+```{r}
+#| echo: false
+#| label: fig-normalresid
+
+>>>>>>> Abby
 # Plot residuals
 library(ggplot2)
 ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals)) +
@@ -126,6 +228,7 @@ ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals))
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
+<<<<<<< HEAD
 The histogram verifies that the residuals are approximately normally distributed.
 
 ## Interaction Effects
@@ -135,16 +238,36 @@ We test for interactions between **Sex and Employment**, and **Veg and Fruit** t
 ```{r}
 # Interaction model
 interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject4_2_)
+=======
+The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
+
+## Interaction Effects
+
+We test for interactions between Sex and Employment, and Veg and Fruit to explore whether dietary factors interact with employment status or gender.
+
+```{r}
+#| echo: false
+# Interaction model
+interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject8)
+>>>>>>> Abby
 
 # Compare models
 anova(step_model, interaction_model)
 ```
 
+<<<<<<< HEAD
 The **ANOVA test** assesses whether including interaction terms significantly improves model fit.
 
 ## Summary of Findings
 
 -   Certain socio-economic and lifestyle factors significantly impact **BMI**.
+=======
+The ANOVA test assesses whether including interaction terms significantly improves model fit.
+
+## Summary of Findings
+
+-   Certain socio-economic and lifestyle factors significantly impact BMI.
+>>>>>>> Abby
 -   Interaction effects between dietary intake and employment status were explored.
 -   Stepwise selection refined the model for better interpretability.
 -   Diagnostic plots confirm that regression assumptions hold.
@@ -152,4 +275,8 @@ The **ANOVA test** assesses whether including interaction terms significantly im
 
 The next section will provide concluding remarks based on these findings.
 
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Abby
 # Conclusions {#sec-conclusion}
