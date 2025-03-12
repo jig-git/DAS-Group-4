@@ -14,8 +14,6 @@ format:
 library(tidymodels)
 library(readr)
 DAProject8 <- read_csv("DAProject8.csv")
-View(DAProject8)
-
 ```
 
 # Introduction {#sec-intro}
@@ -28,11 +26,20 @@ Obesity health concerns are a major issue in Scotland impacting the healthy well
 
 # Exploratory Analysis {#sec-exploratory}
 
+In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
+
+We summarise BMI patterns and visualise distributions to investigate changes over time and differences by age, sex, employment, and diet (specifically fruit and veg intake).
+
+This will allow us to inform our @sec-FA, by checking **normality** **and variance assumptions**.
+
 ```{r}
 #| echo: false
-#| eval: false
+#| warning: false
+#| message: false
+#| label: setup
 
-summary(DAProject8)
+library(tidyverse)
+library(gt)
 
 DAProject8 <- DAProject8 %>%
   mutate(
@@ -43,22 +50,162 @@ DAProject8 <- DAProject8 %>%
     Fruit = as.factor(Fruit),
     Year = as.factor(Year)
   )
+```
 
+## Summary Statistics
+
+We first examine overall BMI and its variation by year. @tbl-bmi-summary shows the overall range and central tendency, while @tbl-bmi-year tracks changes over time.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: tbl-bmi-summary
+#| tbl-cap: "Overall Summary Statistics of BMI"
+
+bmi_summary <- DAProject8 %>%
+  summarise(
+    "Min" = min(BMI, na.rm = TRUE),
+    "Q1" = quantile(BMI, 0.25, na.rm = TRUE),
+    "Median" = median(BMI, na.rm = TRUE),
+    "Mean" = mean(BMI, na.rm = TRUE),
+    "Q3" = quantile(BMI, 0.75, na.rm = TRUE),
+    "Max" = max(BMI, na.rm = TRUE)
+  ) %>%
+  gt() %>%
+  fmt_number(decimals = 2) %>%
+  cols_label(
+    Min = "Minimum",
+    Q1 = "1st Quartile",
+    Median = "Median",
+    Mean = "Mean",
+    Q3 = "3rd Quartile",
+    Max = "Maximum"
+  )
+bmi_summary
 ```
 
 ```{r}
 #| echo: false
-#| label: tbl-sum
-#| tbl-cap: Summary Statistics of Variables
+#| eval: true
+#| label: tbl-bmi-year
+#| tbl-cap: "Mean, Median, and Standard Deviation of BMI by Year"
 
-DAProject8 |>
-   summarise('BMI.Mean' = mean(BMI),
-             'BMI.Median' = median(BMI),
-             .by = c(AgeGroup, Sex, Employment)) |>
-  knitr:: kable(digits = 3,
-                caption = "BMI summarised  by factors",
-                booktab = TRUE)
+bmi_by_year <- DAProject8 %>%
+  group_by(Year) %>%
+  summarise(
+    "Mean_BMI" = mean(BMI, na.rm = TRUE),
+    "Median_BMI" = median(BMI, na.rm = TRUE),
+    "SD_BMI" = sd(BMI, na.rm = TRUE),
+    "N" = n()
+  ) %>%
+  gt() %>%
+  fmt_number(decimals = 2) %>%
+  cols_label(
+    Mean_BMI = "Mean",
+    Median_BMI = "Median",
+    SD_BMI = "Std. Dev",
+    N = "Sample Size"
+  )
+bmi_by_year
+```
 
+@tbl-bmi-year shows mean BMI stays around 27--28 across years, with standard deviations of 5--6, indicating no clear trend over time but consistent variability.
+
+## BMI Distribution and Normality
+
+@fig-bmi-hist displays the overall BMI distribution. It appears slightly right-skewed, with a peak near 25--30, suggesting potential non-normality.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-hist
+#| fig-cap: "Histogram of BMI Distribution (2008-2012)"
+
+bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
+  geom_histogram(binwidth = 2, fill = "dodgerblue4", color = "white") +
+  labs(title = "Distribution of BMI in Scotland (2008-2012)",
+       x = "BMI", y = "Count")
+bmi_hist
+```
+
+@fig-bmi-qq assesses normality with a Q-Q plot. Deviation at the tails confirms skewness, suggesting a transformation (e.g., log) might be needed for @sec-FA.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-qq
+#| fig-cap: "Q-Q Plot of BMI for Normality Assessment"
+
+qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
+qqline(DAProject8$BMI, col = "firebrick1")
+```
+
+@fig-bmi-resid checks variance consistency across years by plotting residuals (BMI minus yearly mean). Similar boxplot spreads suggest roughly equal variance, supporting potential ANOVA or regression in FA, with each year highlighted in a distinct color.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-resid
+#| fig-cap: "Boxplot of BMI Residuals by Year"
+
+# Calculate residuals: BMI - mean BMI per year
+DAProject8 <- DAProject8 %>%
+  group_by(Year) %>%
+  mutate(Mean_BMI = mean(BMI, na.rm = TRUE),
+         Residual = BMI - Mean_BMI)
+
+bmi_resid_box <- ggplot(DAProject8, aes(x = Year, y = Residual, fill = Year)) +
+  geom_boxplot() +
+  scale_fill_manual(values = c("2008" = "lightblue", 
+                               "2009" = "lightgreen", 
+                               "2010" = "lightpink", 
+                               "2011" = "lightcoral", 
+                               "2012" = "lightgoldenrodyellow")) +
+  labs(title = "BMI Residuals by Year",
+       x = "Year", y = "Residual (BMI - Yearly Mean)", fill = "Year")
+bmi_resid_box
+```
+
+## BMI Over Time
+
+@fig-bmi-year shows BMI by year. Medians are stable near 27, with outliers above 50, indicating no major change over 2008--2012.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-year
+#| fig-cap: "Boxplot of BMI by Year"
+
+bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(title = "BMI Distribution by Year",
+       x = "Year", y = "BMI")
+bmi_year_box
+```
+
+## Differences Observed by Other Factors
+
+We will now explore differences in BMI by age, sex, employment, and diet. @fig-bmi-diet facets BMI by vegetable and fruit intake across years, visually assessing diet effects over time.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-diet
+#| fig-cap: "Boxplot of BMI by Year and Diet"
+
+DAProject8 <- DAProject8 %>%
+  mutate(Veg_Fruit = interaction(Veg, Fruit, sep = "/"))
+
+bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
+  geom_boxplot() +
+  facet_grid(Veg ~ Fruit) +
+  scale_fill_manual(values = c("Yes/Yes" = "green3", 
+                               "Yes/No" = "lightgoldenrod1", 
+                               "No/Yes" = "lightskyblue", 
+                               "No/No" = "firebrick3")) +
+  labs(title = "BMI by Year, Vegetable, and Fruit Intake",
+       x = "Year", y = "BMI", fill = "Veg/Fruit")
+bmi_diet_box
 ```
 
 # Formal Analysis {#sec-FA}
