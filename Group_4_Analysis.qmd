@@ -224,14 +224,15 @@ where:
 
 -   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
 
+-   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+
     -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
 
-```{=html}
 <!-- -->
-```
+
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
-    -   $\mathbb{I}_{Sex}(x) = \{\begin{array}{rcl} 1&\mbox{for male} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Sex}(x) = \begin{cases} 1&\mbox{for male} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Employment}$ is the intercept of the regression line for the specified employment status.
 
@@ -239,11 +240,11 @@ where:
 
 -   $\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.
 
-    -   $\mathbb{I}_{Veg}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Veg}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.
 
-    -   $\mathbb{I}_{Fruit}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Fruit}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Year}$ is the intercept of the regression line for the year.
 
@@ -251,7 +252,7 @@ where:
 
 -   $\epsilon_i$ represents normally distributed errors.
 
-## Stepwise Regression 
+## Stepwise Regression
 
 To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
 
@@ -264,6 +265,8 @@ library(tidyverse)
 library(gt)
 library(MASS)
 library(moderndive)
+library(broom)
+library(knitr)
 
 #regression model
 bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8)
@@ -293,7 +296,7 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 
 To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
 
-```{r}
+```{r, echo=FALSE}
 #|echo: false
 #|label: fig-residassump
 
