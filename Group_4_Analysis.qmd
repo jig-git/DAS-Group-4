@@ -223,9 +223,9 @@ where:
 
 -   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
 
-```         
+       
 -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
-```
+
 
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
@@ -260,6 +260,8 @@ library(tidyverse)
 library(gt)
 library(MASS)
 library(moderndive)
+library(broom)
+library(knitr)
 
 #regression model
 bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8)
@@ -287,7 +289,7 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 
 To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
 
-```{r}
+```{r, echo=FALSE}
 #|echo: false
 #|label: fig-residassump
 
