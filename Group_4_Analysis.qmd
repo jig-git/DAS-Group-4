@@ -334,7 +334,13 @@ We test for interactions between Sex and Employment, and Veg and Fruit to explor
 interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject8)
 
 # Compare models
-anova(step_model, interaction_model)
+anova(step_model, interaction_model) %>%
+  tidy() %>%
+  mutate(Model = c("Model 1: Stepwise", "Model 2: Interaction")) %>%
+  select(Model, everything()) %>%
+  gt() %>%
+  tab_header(title = "ANOVA Model Comparison", subtitle = "Testing interaction effects")
+
 ```
 
 The ANOVA test assesses whether including interaction terms significantly improves model fit.
