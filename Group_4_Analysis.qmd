@@ -1,5 +1,6 @@
 ---
-title: " Data Analysis Group 4"
+title: "BMI Distribution in Scotland from 2008-2012"
+author: "2772011M, 2840466A, 2782951G, 2662654J"
 number-sections: true
 format: 
   html:
@@ -223,10 +224,17 @@ where:
 
 -   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
 
+
        
 -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
 
 
+    -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+
+
+```{=html}
+<!-- -->
+```
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
     -   $\mathbb{I}_{Sex}(x) = \{\begin{array}{rcl} 1&\mbox{for male} \\ 0&otherwise \end{array}$
@@ -248,6 +256,8 @@ where:
     -   $\mathbb{I}_{Year}(x)$ is an indicator function indicating the year.
 
 -   $\epsilon_i$ represents normally distributed errors.
+
+## Stepwise Regression 
 
 To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
 
@@ -286,6 +296,8 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
 
 @tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
+
+## Model Assumptions
 
 To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
 
