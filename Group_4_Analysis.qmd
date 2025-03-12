@@ -229,8 +229,6 @@ where:
 
     -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
 
-<!-- -->
-
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
     -   $\mathbb{I}_{Sex}(x) = \begin{cases} 1&\mbox{for male} \\ 0&otherwise \end{cases}$
