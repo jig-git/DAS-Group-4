@@ -169,7 +169,7 @@ bmi_resid_box
 
 ## BMI Over Time
 
-@fig-bmi-year shows BMI by year. Medians are stable near 27, with outliers above 50, indicating no major change over 2008--2012.
+@fig-bmi-year shows BMI by year. Medians are stable near 27, with outliers above 50, indicating no major change over 2008-2012.
 
 ```{r}
 #| echo: false
@@ -295,7 +295,7 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 
 ## Model Assumptions
 
-To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
+To ensure that regression assumptions hold, we analyse residuals demonstrated in @fig-residassump below.
 
 ```{r, echo=FALSE}
 #|echo: false
@@ -309,7 +309,7 @@ par(mfrow = c(1, 1))
 
 The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.
 
-To confirm the validity of model assumptions, we visualise the normality of the residuals in the histogram below.
+To confirm the validity of model assumptions, we visualise the normality of the residuals in @fig-normalresid below.
 
 ```{r}
 #| echo: false
@@ -338,7 +338,7 @@ anova(step_model, interaction_model)
 
 ```
 
-The ANOVA test assesses whether including interaction terms significantly improves model fit.
+As we can observe in @tbl-ANOVA, the ANOVA test assesses whether including interaction terms significantly improves model fit.
 
 ## Summary of Findings
 
