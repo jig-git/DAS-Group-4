@@ -318,7 +318,7 @@ To confirm the validity of model assumptions, we visualise the normality of the 
 # Plot residuals
 library(ggplot2)
 ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals)) +
-  geom_histogram(binwidth = 1, fill = "gray", color = "black") +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
