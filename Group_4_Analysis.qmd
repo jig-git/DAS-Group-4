@@ -109,11 +109,11 @@ bmi_by_year <- DAProject8 %>%
 bmi_by_year
 ```
 
-@tbl-bmi-year shows mean BMI stays around 27--28 across years, with standard deviations of 5--6, indicating no clear trend over time but consistent variability.
+As we can see, \@tbl-bmi-year shows that the mean BMI remains between 27 and 28 across the years in question, with a narrow range of standard deviations between the values 5.16 and 5.36, indicating no clear trend over time but consistent variability.
 
 ## BMI Distribution and Normality
 
-@fig-bmi-hist displays the overall BMI distribution. It appears slightly right-skewed, with a peak near 25--30, suggesting potential non-normality.
+@fig-bmi-hist displays the overall BMI distribution.
 
 ```{r}
 #| echo: false
@@ -128,7 +128,9 @@ bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
 bmi_hist
 ```
 
-@fig-bmi-qq assesses normality with a Q-Q plot. Deviation at the tails confirms skewness, suggesting a transformation (e.g., log) might be needed for @sec-FA.
+The distribution appears slightly right-skewed, with a peak near 26, suggesting potential non-normality.
+
+@fig-bmi-qq assesses normality with a Q-Q plot. Deviation at the tails confirms skewness, suggesting a transformation (such as a log-transform) may be needed for @sec-FA.
 
 ```{r}
 #| echo: false
@@ -140,7 +142,7 @@ qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
 qqline(DAProject8$BMI, col = "firebrick1")
 ```
 
-@fig-bmi-resid checks variance consistency across years by plotting residuals (BMI minus yearly mean). Similar boxplot spreads suggest roughly equal variance, supporting potential ANOVA or regression in FA, with each year highlighted in a distinct color.
+@fig-bmi-resid checks variance consistency across years by plotting residuals (BMI minus yearly mean). Similar boxplot spreads suggest roughly equal variance, supporting potential ANOVA or regression in @sec-FA, with each year highlighted in a distinct color.
 
 ```{r}
 #| echo: false
@@ -212,9 +214,9 @@ bmi_diet_box
 
 We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
 
-$$ \begin{align}
+$$\begin{align}
 y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \beta_{Veg}\cdot \mathbb{I}_{Veg}(x) + \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
-& ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n \\
+& ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n 
 \end{align}$$
 
 where:
@@ -237,7 +239,7 @@ where:
 
 -   $\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.
 
-    -   $\mathbb{I}_{Veg}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Veg}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \\ \end{array}$
 
 -   $\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.
 
@@ -312,7 +314,7 @@ ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals))
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
-The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
+The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centered at zero.
 
 ## Interaction Effects
 
