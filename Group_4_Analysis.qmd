@@ -214,7 +214,8 @@ bmi_diet_box
 We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
 
 $$ \begin{align}
-y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \beta_{Veg}\cdot \mathbb{I}_{Veg}(x) + \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
+y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \\
+&\beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
 & ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n \\
 \end{align}$$
 
@@ -224,20 +225,13 @@ where:
 
 -   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
 
-
-       
 -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
-
 
     -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
 
-
-```{=html}
-<!-- -->
-```
 -   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
 
-    -   $\mathbb{I}_{Sex}(x) = \{\begin{array}{rcl} 1&\mbox{for male} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Sex}(x) = \begin{cases} 1&\mbox{for male} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Employment}$ is the intercept of the regression line for the specified employment status.
 
@@ -245,11 +239,11 @@ where:
 
 -   $\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.
 
-    -   $\mathbb{I}_{Veg}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Veg}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.
 
-    -   $\mathbb{I}_{Fruit}(x) = \{\begin{array}{rcl} 1&\mbox{for yes} \\ 0&otherwise \end{array}$
+    -   $\mathbb{I}_{Fruit}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
 -   $\beta_{Year}$ is the intercept of the regression line for the year.
 
@@ -257,7 +251,7 @@ where:
 
 -   $\epsilon_i$ represents normally distributed errors.
 
-## Stepwise Regression 
+## Stepwise Regression
 
 To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
 
