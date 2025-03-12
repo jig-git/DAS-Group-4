@@ -298,11 +298,13 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 To ensure that regression assumptions hold, we analyse residuals demonstrated in @fig-residassump below.
 
 ```{r, echo=FALSE}
-#|echo: false
-#|label: fig-residassump
+#| echo: false
+#| label: fig-residassump
+#| fig-cap: "Residual Diagnostic Plots for Stepwise Model"
+#| fig-width: 10
+#| fig-height: 6
 
-# Residual plots
-par(mfrow = c(2, 2))
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
 plot(step_model)
 par(mfrow = c(1, 1))
 ```
