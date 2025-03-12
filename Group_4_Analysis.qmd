@@ -330,12 +330,52 @@ We test for interactions between Sex and Employment, and Veg and Fruit to explor
 
 ```{r}
 #| echo: false
-# Interaction model
+#| message: false
+#| warning: false
+#| output: false
+
+library(gt)
+library(dplyr)
+
 interaction_model <- lm(BMI ~ AgeGroup * Sex + Employment * Veg + Fruit + Year, data = DAProject8)
 
-# Compare models
-anova(step_model, interaction_model)
+anova_result <- anova(step_model, interaction_model)
+```
 
+```{r}
+#| echo: false
+#| label: tbl-ANOVA
+#| tbl-cap: ANOVA compsrison of our Step Model against the Interaction Model.
+
+anova_df <- as.data.frame(anova_result)
+
+anova_df %>%
+  gt() %>%
+  tab_header(
+    title = "ANOVA Comparison of Models",
+    subtitle = "Step Model vs. Interaction Model"
+  ) %>%
+  cols_label(
+    `Res.Df` = "Residual DF",
+    RSS = "Residual Sum of Squares",
+    Df = "Degrees of Freedom",
+    `Sum of Sq` = "Sum of Squares",
+    F = "F Statistic",
+    `Pr(>F)` = "p-value"
+  ) %>%
+  fmt_number(
+    columns = c(RSS, `Sum of Sq`, F),
+    decimals = 2
+  ) %>%
+  fmt_number(
+    columns = `Pr(>F)`,
+    decimals = 4
+  ) %>%
+  tab_options(
+    table.font.size = 12,
+    heading.title.font.size = 16,
+    heading.subtitle.font.size = 14
+  )
 ```
 
 As we can observe in @tbl-ANOVA, the ANOVA test assesses whether including interaction terms significantly improves model fit.
