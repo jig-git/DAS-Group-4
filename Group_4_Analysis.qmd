@@ -251,6 +251,8 @@ where:
 
 -   $\epsilon_i$ represents normally distributed errors.
 
+## Stepwise Regression 
+
 To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
 
 ```{r}
@@ -286,6 +288,8 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
 
 @tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
+
+## Model Assumptions
 
 To ensure that regression assumptions hold, we analyse residuals demonstrated in the figure below.
 
