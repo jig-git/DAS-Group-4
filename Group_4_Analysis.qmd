@@ -257,6 +257,7 @@ To refine the model, since there are so many variables, we apply stepwise regres
 ```{r}
 #| warning: false
 #| echo: false
+#| output: false
 
 library(ggplot2)
 library(tidyverse)
@@ -267,8 +268,9 @@ library(broom)
 library(knitr)
 
 #regression model
-bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8)
+bmi_model <- lm(BMI ~ AgeGroup + Sex + Employment + Veg + Fruit + Year, data = DAProject8) 
 bmi_model
+
 #Stepwise selection using backward elimination
 step_model <- stepAIC(bmi_model, direction = "backward", trace = FALSE)
 AIC <- step_model$anova
@@ -283,6 +285,7 @@ The final regression model results are summarized in @tbl-regtable
 #| label: tbl-regtable
 #| tbl-cap: Estimates of the regression model coeeficients
 
+library(moderndive)
 
 # Display final selected model coefficients
 gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
