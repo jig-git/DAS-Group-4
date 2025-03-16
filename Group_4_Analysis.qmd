@@ -393,4 +393,5 @@ As we can observe in @tbl-ANOVA, the ANOVA test assesses whether including inter
 The next section will provide concluding remarks based on these findings.
 
 # Conclusions {#sec-conclusion}
-test
+
+As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question. When it comes to BMI distribution differences by age
