@@ -394,4 +394,4 @@ The next section will provide concluding remarks based on these findings.
 
 # Conclusions {#sec-conclusion}
 
-As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question. When it comes to BMI distribution differences by age
+As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question. When it comes to BMI distribution differences by age,gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that
