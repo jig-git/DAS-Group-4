@@ -25,13 +25,11 @@ Obesity health concerns are a major issue in Scotland impacting the healthy well
 
 @sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions. Through exploratory analysis and statistical tests the concluding remarks will be given in @sec-conclusion.
 
-# Exploratory Analysis {#sec-exploratory}
+# Exploratory Data Analysis {#sec-exploratory}
 
 In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
 
-We summarise BMI patterns and visualise distributions to investigate changes over time and differences by age, sex, employment, and diet (specifically fruit and veg intake).
-
-This will allow us to inform our @sec-FA, by checking **normality** **and variance assumptions**.
+We summarise BMI patterns and visualise distributions to investigate changes over time and differences by age, sex, employment, and diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** **and variance assumptions**.
 
 ```{r}
 #| echo: false
@@ -55,7 +53,7 @@ DAProject8 <- DAProject8 %>%
 
 ## Summary Statistics
 
-We first examine overall BMI and its variation by year. @tbl-bmi-summary shows the overall range and central tendency, while @tbl-bmi-year tracks changes over time.
+@tbl-bmi-summary depicts the interquartile range, overall range and central tendency of the BMI in the time frame.
 
 ```{r}
 #| echo: false
@@ -85,6 +83,10 @@ bmi_summary <- DAProject8 %>%
 bmi_summary
 ```
 
+From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.
+
+@tbl-bmi-year tracks changes in the mean, mdedian, standard deviation, and sample size over our time frame.
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -110,11 +112,11 @@ bmi_by_year <- DAProject8 %>%
 bmi_by_year
 ```
 
-@tbl-bmi-year shows mean BMI stays around 27--28 across years, with standard deviations of 5--6, indicating no clear trend over time but consistent variability.
+As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations of remain approximately constant, indicating no clear trend over time but consistent variability.
 
 ## BMI Distribution and Normality
 
-@fig-bmi-hist displays the overall BMI distribution. It appears slightly right-skewed, with a peak near 25--30, suggesting potential non-normality.
+@fig-bmi-hist displays the overall BMI distribution between 2008 and 2012.
 
 ```{r}
 #| echo: false
@@ -129,7 +131,9 @@ bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
 bmi_hist
 ```
 
-@fig-bmi-qq assesses normality with a Q-Q plot. Deviation at the tails confirms skewness, suggesting a transformation (e.g., log) might be needed for @sec-FA.
+As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.
+
+@fig-bmi-qq assesses normality with a Q-Q plot.
 
 ```{r}
 #| echo: false
@@ -141,35 +145,11 @@ qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
 qqline(DAProject8$BMI, col = "firebrick1")
 ```
 
-@fig-bmi-resid checks variance consistency across years by plotting residuals (BMI minus yearly mean). Similar boxplot spreads suggest roughly equal variance, supporting potential ANOVA or regression in FA, with each year highlighted in a distinct color.
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: fig-bmi-resid
-#| fig-cap: "Boxplot of BMI Residuals by Year"
-
-# Calculate residuals: BMI - mean BMI per year
-DAProject8 <- DAProject8 %>%
-  group_by(Year) %>%
-  mutate(Mean_BMI = mean(BMI, na.rm = TRUE),
-         Residual = BMI - Mean_BMI)
-
-bmi_resid_box <- ggplot(DAProject8, aes(x = Year, y = Residual, fill = Year)) +
-  geom_boxplot() +
-  scale_fill_manual(values = c("2008" = "lightblue", 
-                               "2009" = "lightgreen", 
-                               "2010" = "lightpink", 
-                               "2011" = "lightcoral", 
-                               "2012" = "lightgoldenrodyellow")) +
-  labs(title = "BMI Residuals by Year",
-       x = "Year", y = "Residual (BMI - Yearly Mean)", fill = "Year")
-bmi_resid_box
-```
+In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (e.g., log) might be needed for our analysis in @sec-FA.
 
 ## BMI Over Time
 
-@fig-bmi-year shows BMI by year. Medians are stable near 27, with outliers above 50, indicating no major change over 2008-2012.
+@fig-bmi-year shows our BMI distribution by year.
 
 ```{r}
 #| echo: false
@@ -177,16 +157,23 @@ bmi_resid_box
 #| label: fig-bmi-year
 #| fig-cap: "Boxplot of BMI by Year"
 
-bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI)) +
-  geom_boxplot(fill = "lightgreen") +
+bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Year)) +
+  geom_boxplot() +
+  scale_fill_manual(values = c("2008" = "lightblue", 
+                               "2009" = "lightgreen", 
+                               "2010" = "lightpink", 
+                               "2011" = "lightcoral", 
+                               "2012" = "lightgoldenrodyellow")) +
   labs(title = "BMI Distribution by Year",
-       x = "Year", y = "BMI")
+       x = "Year", y = "BMI", fill = "Year")
 bmi_year_box
 ```
 
-## Differences Observed by Other Factors
+As displayed in @fig-bmi-year, our distributions appear similar throughout, with some outliers above 50 appearing every year, indicating again, that there are no major change over 2008-2012.
 
-We will now explore differences in BMI by age, sex, employment, and diet. @fig-bmi-diet facets BMI by vegetable and fruit intake across years, visually assessing diet effects over time.
+## Differences Observed by Diet
+
+@fig-bmi-diet facets BMI by vegetable and fruit intake across years, which allows us to assess diet effects over time.
 
 ```{r}
 #| echo: false
@@ -199,7 +186,7 @@ DAProject8 <- DAProject8 %>%
 
 bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
   geom_boxplot() +
-  facet_grid(Veg ~ Fruit) +
+  facet_grid(Fruit ~ Veg) + 
   scale_fill_manual(values = c("Yes/Yes" = "green3", 
                                "Yes/No" = "lightgoldenrod1", 
                                "No/Yes" = "lightskyblue", 
@@ -208,6 +195,8 @@ bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
        x = "Year", y = "BMI", fill = "Veg/Fruit")
 bmi_diet_box
 ```
+
+As can be observed in @fig-bmi-diet, the BMI distributions remain similar when `veg` intake is or is not present, no matter what the `fruit` intake is. We can see that there is potentially a slightly higher BMI associated with both `veg` and `fruit` being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.
 
 # Formal Analysis {#sec-FA}
 
