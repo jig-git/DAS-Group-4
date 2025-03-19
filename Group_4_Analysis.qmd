@@ -281,6 +281,7 @@ library(moderndive)
 # Display final selected model coefficients
 gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
+
 As displayed in @tbl-regtable, BMI increases with `Age`, with all age groups showing statistically significant positive estimates compared to the reference group (`18-24`). The largest increase peaks in the `55-64` age group in BMI and then decreases in the `75+` group.
 
 With respect to `Employment` status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI.
@@ -378,8 +379,28 @@ The **ANOVA test** assesses whether including interaction terms significantly im
 
 As we can see in @tbl-ANOVA, the model which included the interaction terms **did**, in fact, exhibit a significant improvement on our model fit (as can be seen with our p-value being \<0.05).
 
-The next section will provide concluding remarks based on these findings.
+@sec-conclusion will provide concluding remarks based on these findings.
 
 # Conclusions {#sec-conclusion}
 
-As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes thus time did not have a significant impact on BMI. However, lifestyle and demographic factors do influence BMI as shown by @sec-FA. When it comes to BMI distribution differences by age,gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing.
+As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes. Thus, **time did not have a significant impact on BMI**.
+
+However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. When it comes to BMI distribution differences by `Age`, `Sex`, socio-economic status or lifestyle factors, we can look at @tbl-regtable.
+
+@tbl-regtable provided us with the following with respect to `Age`:
+
+-   We can see that BMI significantly **increases** as `Age` increases generally; and the `55-74` age range generally saw the largest increase.
+
+Further, with regards to `Employment`, we can say the following:
+
+-   We observed that for those who were `In full time education`, the BMI **decreases** significantly.
+
+-   However for those in `In paid employment, self-employed or on gov't training`, there appears to be a small, but significant impact on the BMI **increasing**.
+
+-   Being `Perm unable to work` leads to the **strongest increase** in BMI out of the different `Employment` factors.
+
+-   Being `Retired` also meant a significant increase of BMI.
+
+-   However, `Looking after home/family` and `Looking/intending looking for work` **did not** result in any significant impact on the BMI, at a 95% significance level, whether this was an increase or decrease.
+
+When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of `Veg`, showed a significant **decrease** on BMI.
