@@ -385,22 +385,8 @@ As we can see in @tbl-ANOVA, the model which included the interaction terms **di
 
 As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes. Thus, **time did not have a significant impact on BMI**.
 
-However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. When it comes to BMI distribution differences by `Age`, `Sex`, socio-economic status or lifestyle factors, we can look at @tbl-regtable.
-
-@tbl-regtable provided us with the following with respect to `Age`:
-
--   We can see that BMI significantly **increases** as `Age` increases generally; and the `55-74` age range generally saw the largest increase.
-
-Further, with regards to `Employment`, we can say the following:
-
--   We observed that for those who were `In full time education`, the BMI **decreases** significantly.
-
--   However for those in `In paid employment, self-employed or on gov't training`, there appears to be a small, but significant impact on the BMI **increasing**.
-
--   Being `Perm unable to work` leads to the **strongest increase** in BMI out of the different `Employment` factors.
-
--   Being `Retired` also meant a significant increase of BMI.
-
--   However, `Looking after home/family` and `Looking/intending looking for work` **did not** result in any significant impact on the BMI, at a 95% significance level, whether this was an increase or decrease.
+However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. We can see that BMI significantly **increases** as `Age` increases generally; and the `55-64` age range generally saw the largest increase. Further, with regards to `Employment`, we can say that if you are actively in work your BMI generally **decreases**. In addition, those who are not currently in employment have a higher BMI distribution.
 
 When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of `Veg`, showed a significant **decrease** on BMI.
+
+Hence, **lifestyle and social-economic factors do have a significant effect on the BMI distribution.**
