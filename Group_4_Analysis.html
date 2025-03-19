@@ -3252,18 +3252,18 @@ window.Quarto = {
 
 <section id="sec-intro" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population’s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <code>DAProject8</code> dataset) uses factors such as <code>Age</code>, <code>Sex</code>, <code>Employment</code> status, <code>Veg</code> intake, <code>Fruit</code> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</p>
-<p><a href="#sec-exploratory" class="quarto-xref">Section 2</a> consists of the Exploratory Analysis of the survey’s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</p>
-<p><a href="#sec-FA" class="quarto-xref">Section 3</a> contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions.</p>
+<p>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The <strong>Body Mass Index (BMI)</strong> is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population’s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <code>DAProject8</code> dataset) uses factors such as <code>Age</code>, <code>Sex</code>, <code>Employment</code> status, <code>Veg</code> intake, <code>Fruit</code> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</p>
+<p><a href="#sec-exploratory" class="quarto-xref">Section 2</a> consists of the <strong>Exploratory Analysis</strong> of the survey’s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</p>
+<p><a href="#sec-FA" class="quarto-xref">Section 3</a> contains the results from fitting a <strong>multiple regression model</strong> to the data, as well as the assessment of the model assumptions.</p>
 <p>The concluding remarks will be given in <a href="#sec-conclusion" class="quarto-xref">Section 4</a>.</p>
 </section>
 <section id="sec-exploratory" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Exploratory Data Analysis</h1>
 <p>In this section , we will explore the distribution of BMI from our <code>DAProject8</code> dataset.</p>
-<p>Here, we summarise BMI patterns and visualise distributions to investigate changes over time and differences by another factor in diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in <a href="#sec-FA" class="quarto-xref">Section 3</a>, by checking <strong>normality</strong> <strong>and variance assumptions</strong>.</p>
+<p>Here, we <strong>summarise BMI patterns</strong> and <strong>visualise distributions</strong> to investigate changes over time and differences by another factor, in diet (specifically <code>Fruit</code> and <code>Veg</code> intake). This will allow us to inform our Formal Analysis in <a href="#sec-FA" class="quarto-xref">Section 3</a>, by checking <strong>normality</strong> and <strong>variance assumptions</strong>.</p>
 <section id="summary-statistics" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</h2>
-<p><a href="#tbl-bmi-summary" class="quarto-xref">Table 1</a> depicts the interquartile range, overall range and central tendency of the BMI in the time frame.</p>
+<p><a href="#tbl-bmi-summary" class="quarto-xref">Table 1</a> depicts the <strong>interquartile range</strong>, <strong>overall range</strong> and <strong>central tendency</strong> of the BMI in the time frame.</p>
 <div class="cell">
 <div id="tbl-bmi-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -3272,20 +3272,20 @@ Table 1: Overall Summary Statistics of BMI
 </figcaption>
 <div aria-describedby="tbl-bmi-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fioxmslxjc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fioxmslxjc table {
+<div id="zpijkshdhq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zpijkshdhq table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#fioxmslxjc thead, #fioxmslxjc tbody, #fioxmslxjc tfoot, #fioxmslxjc tr, #fioxmslxjc td, #fioxmslxjc th {
+#zpijkshdhq thead, #zpijkshdhq tbody, #zpijkshdhq tfoot, #zpijkshdhq tr, #zpijkshdhq td, #zpijkshdhq th {
 border-style: none;
 }
-#fioxmslxjc p {
+#zpijkshdhq p {
 margin: 0;
 padding: 0;
 }
-#fioxmslxjc .gt_table {
+#zpijkshdhq .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3310,11 +3310,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#fioxmslxjc .gt_caption {
+#zpijkshdhq .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#fioxmslxjc .gt_title {
+#zpijkshdhq .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3325,7 +3325,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#fioxmslxjc .gt_subtitle {
+#zpijkshdhq .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3336,7 +3336,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#fioxmslxjc .gt_heading {
+#zpijkshdhq .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3347,12 +3347,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#fioxmslxjc .gt_bottom_border {
+#zpijkshdhq .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#fioxmslxjc .gt_col_headings {
+#zpijkshdhq .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3366,7 +3366,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#fioxmslxjc .gt_col_heading {
+#zpijkshdhq .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3385,7 +3385,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#fioxmslxjc .gt_column_spanner_outer {
+#zpijkshdhq .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3396,13 +3396,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#fioxmslxjc .gt_column_spanner_outer:first-child {
+#zpijkshdhq .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#fioxmslxjc .gt_column_spanner_outer:last-child {
+#zpijkshdhq .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#fioxmslxjc .gt_column_spanner {
+#zpijkshdhq .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3413,10 +3413,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#fioxmslxjc .gt_spanner_row {
+#zpijkshdhq .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#fioxmslxjc .gt_group_heading {
+#zpijkshdhq .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3441,7 +3441,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#fioxmslxjc .gt_empty_group_heading {
+#zpijkshdhq .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3455,13 +3455,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#fioxmslxjc .gt_from_md > :first-child {
+#zpijkshdhq .gt_from_md > :first-child {
 margin-top: 0;
 }
-#fioxmslxjc .gt_from_md > :last-child {
+#zpijkshdhq .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#fioxmslxjc .gt_row {
+#zpijkshdhq .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3479,7 +3479,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#fioxmslxjc .gt_stub {
+#zpijkshdhq .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3491,7 +3491,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#fioxmslxjc .gt_stub_row_group {
+#zpijkshdhq .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3504,13 +3504,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#fioxmslxjc .gt_row_group_first td {
+#zpijkshdhq .gt_row_group_first td {
 border-top-width: 2px;
 }
-#fioxmslxjc .gt_row_group_first th {
+#zpijkshdhq .gt_row_group_first th {
 border-top-width: 2px;
 }
-#fioxmslxjc .gt_summary_row {
+#zpijkshdhq .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3519,14 +3519,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#fioxmslxjc .gt_first_summary_row {
+#zpijkshdhq .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#fioxmslxjc .gt_first_summary_row.thick {
+#zpijkshdhq .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#fioxmslxjc .gt_last_summary_row {
+#zpijkshdhq .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3535,7 +3535,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#fioxmslxjc .gt_grand_summary_row {
+#zpijkshdhq .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3544,7 +3544,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#fioxmslxjc .gt_first_grand_summary_row {
+#zpijkshdhq .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3553,7 +3553,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#fioxmslxjc .gt_last_grand_summary_row_top {
+#zpijkshdhq .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3562,10 +3562,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#fioxmslxjc .gt_striped {
+#zpijkshdhq .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#fioxmslxjc .gt_table_body {
+#zpijkshdhq .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3573,7 +3573,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#fioxmslxjc .gt_footnotes {
+#zpijkshdhq .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3586,7 +3586,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#fioxmslxjc .gt_footnote {
+#zpijkshdhq .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -3594,7 +3594,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#fioxmslxjc .gt_sourcenotes {
+#zpijkshdhq .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3607,64 +3607,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#fioxmslxjc .gt_sourcenote {
+#zpijkshdhq .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#fioxmslxjc .gt_left {
+#zpijkshdhq .gt_left {
 text-align: left;
 }
-#fioxmslxjc .gt_center {
+#zpijkshdhq .gt_center {
 text-align: center;
 }
-#fioxmslxjc .gt_right {
+#zpijkshdhq .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#fioxmslxjc .gt_font_normal {
+#zpijkshdhq .gt_font_normal {
 font-weight: normal;
 }
-#fioxmslxjc .gt_font_bold {
+#zpijkshdhq .gt_font_bold {
 font-weight: bold;
 }
-#fioxmslxjc .gt_font_italic {
+#zpijkshdhq .gt_font_italic {
 font-style: italic;
 }
-#fioxmslxjc .gt_super {
+#zpijkshdhq .gt_super {
 font-size: 65%;
 }
-#fioxmslxjc .gt_footnote_marks {
+#zpijkshdhq .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#fioxmslxjc .gt_asterisk {
+#zpijkshdhq .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#fioxmslxjc .gt_indent_1 {
+#zpijkshdhq .gt_indent_1 {
 text-indent: 5px;
 }
-#fioxmslxjc .gt_indent_2 {
+#zpijkshdhq .gt_indent_2 {
 text-indent: 10px;
 }
-#fioxmslxjc .gt_indent_3 {
+#zpijkshdhq .gt_indent_3 {
 text-indent: 15px;
 }
-#fioxmslxjc .gt_indent_4 {
+#zpijkshdhq .gt_indent_4 {
 text-indent: 20px;
 }
-#fioxmslxjc .gt_indent_5 {
+#zpijkshdhq .gt_indent_5 {
 text-indent: 25px;
 }
-#fioxmslxjc .katex-display {
+#zpijkshdhq .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#fioxmslxjc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zpijkshdhq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -3699,7 +3699,7 @@ height: 0px !important;
 </div>
 </div>
 <p>From <a href="#tbl-bmi-summary" class="quarto-xref">Table 1</a>, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.</p>
-<p><a href="#tbl-bmi-year" class="quarto-xref">Table 2</a> tracks changes in the mean, mdedian, standard deviation, and sample size over our time frame.</p>
+<p><a href="#tbl-bmi-year" class="quarto-xref">Table 2</a> tracks changes in the <strong>mean</strong>, <strong>median</strong>, <strong>standard deviation</strong>, and <strong>sample size</strong> over our time frame.</p>
 <div class="cell">
 <div id="tbl-bmi-year" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -3708,20 +3708,20 @@ Table 2: Mean, Median, and Standard Deviation of BMI by Year
 </figcaption>
 <div aria-describedby="tbl-bmi-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ypedcfxdbi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ypedcfxdbi table {
+<div id="nwjqgbfwdr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nwjqgbfwdr table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#ypedcfxdbi thead, #ypedcfxdbi tbody, #ypedcfxdbi tfoot, #ypedcfxdbi tr, #ypedcfxdbi td, #ypedcfxdbi th {
+#nwjqgbfwdr thead, #nwjqgbfwdr tbody, #nwjqgbfwdr tfoot, #nwjqgbfwdr tr, #nwjqgbfwdr td, #nwjqgbfwdr th {
 border-style: none;
 }
-#ypedcfxdbi p {
+#nwjqgbfwdr p {
 margin: 0;
 padding: 0;
 }
-#ypedcfxdbi .gt_table {
+#nwjqgbfwdr .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3746,11 +3746,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_caption {
+#nwjqgbfwdr .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#ypedcfxdbi .gt_title {
+#nwjqgbfwdr .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3761,7 +3761,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#ypedcfxdbi .gt_subtitle {
+#nwjqgbfwdr .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3772,7 +3772,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#ypedcfxdbi .gt_heading {
+#nwjqgbfwdr .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3783,12 +3783,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_bottom_border {
+#nwjqgbfwdr .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_col_headings {
+#nwjqgbfwdr .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3802,7 +3802,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_col_heading {
+#nwjqgbfwdr .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3821,7 +3821,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#ypedcfxdbi .gt_column_spanner_outer {
+#nwjqgbfwdr .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3832,13 +3832,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#ypedcfxdbi .gt_column_spanner_outer:first-child {
+#nwjqgbfwdr .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#ypedcfxdbi .gt_column_spanner_outer:last-child {
+#nwjqgbfwdr .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#ypedcfxdbi .gt_column_spanner {
+#nwjqgbfwdr .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3849,10 +3849,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#ypedcfxdbi .gt_spanner_row {
+#nwjqgbfwdr .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#ypedcfxdbi .gt_group_heading {
+#nwjqgbfwdr .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3877,7 +3877,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#ypedcfxdbi .gt_empty_group_heading {
+#nwjqgbfwdr .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3891,13 +3891,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#ypedcfxdbi .gt_from_md > :first-child {
+#nwjqgbfwdr .gt_from_md > :first-child {
 margin-top: 0;
 }
-#ypedcfxdbi .gt_from_md > :last-child {
+#nwjqgbfwdr .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#ypedcfxdbi .gt_row {
+#nwjqgbfwdr .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3915,7 +3915,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#ypedcfxdbi .gt_stub {
+#nwjqgbfwdr .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3927,7 +3927,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ypedcfxdbi .gt_stub_row_group {
+#nwjqgbfwdr .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3940,13 +3940,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#ypedcfxdbi .gt_row_group_first td {
+#nwjqgbfwdr .gt_row_group_first td {
 border-top-width: 2px;
 }
-#ypedcfxdbi .gt_row_group_first th {
+#nwjqgbfwdr .gt_row_group_first th {
 border-top-width: 2px;
 }
-#ypedcfxdbi .gt_summary_row {
+#nwjqgbfwdr .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3955,14 +3955,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ypedcfxdbi .gt_first_summary_row {
+#nwjqgbfwdr .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_first_summary_row.thick {
+#nwjqgbfwdr .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#ypedcfxdbi .gt_last_summary_row {
+#nwjqgbfwdr .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3971,7 +3971,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_grand_summary_row {
+#nwjqgbfwdr .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3980,7 +3980,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ypedcfxdbi .gt_first_grand_summary_row {
+#nwjqgbfwdr .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3989,7 +3989,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_last_grand_summary_row_top {
+#nwjqgbfwdr .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3998,10 +3998,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_striped {
+#nwjqgbfwdr .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#ypedcfxdbi .gt_table_body {
+#nwjqgbfwdr .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4009,7 +4009,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_footnotes {
+#nwjqgbfwdr .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4022,7 +4022,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_footnote {
+#nwjqgbfwdr .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -4030,7 +4030,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ypedcfxdbi .gt_sourcenotes {
+#nwjqgbfwdr .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4043,64 +4043,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ypedcfxdbi .gt_sourcenote {
+#nwjqgbfwdr .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ypedcfxdbi .gt_left {
+#nwjqgbfwdr .gt_left {
 text-align: left;
 }
-#ypedcfxdbi .gt_center {
+#nwjqgbfwdr .gt_center {
 text-align: center;
 }
-#ypedcfxdbi .gt_right {
+#nwjqgbfwdr .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#ypedcfxdbi .gt_font_normal {
+#nwjqgbfwdr .gt_font_normal {
 font-weight: normal;
 }
-#ypedcfxdbi .gt_font_bold {
+#nwjqgbfwdr .gt_font_bold {
 font-weight: bold;
 }
-#ypedcfxdbi .gt_font_italic {
+#nwjqgbfwdr .gt_font_italic {
 font-style: italic;
 }
-#ypedcfxdbi .gt_super {
+#nwjqgbfwdr .gt_super {
 font-size: 65%;
 }
-#ypedcfxdbi .gt_footnote_marks {
+#nwjqgbfwdr .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#ypedcfxdbi .gt_asterisk {
+#nwjqgbfwdr .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#ypedcfxdbi .gt_indent_1 {
+#nwjqgbfwdr .gt_indent_1 {
 text-indent: 5px;
 }
-#ypedcfxdbi .gt_indent_2 {
+#nwjqgbfwdr .gt_indent_2 {
 text-indent: 10px;
 }
-#ypedcfxdbi .gt_indent_3 {
+#nwjqgbfwdr .gt_indent_3 {
 text-indent: 15px;
 }
-#ypedcfxdbi .gt_indent_4 {
+#nwjqgbfwdr .gt_indent_4 {
 text-indent: 20px;
 }
-#ypedcfxdbi .gt_indent_5 {
+#nwjqgbfwdr .gt_indent_5 {
 text-indent: 25px;
 }
-#ypedcfxdbi .katex-display {
+#nwjqgbfwdr .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#ypedcfxdbi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nwjqgbfwdr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -4160,11 +4160,11 @@ height: 0px !important;
 </figure>
 </div>
 </div>
-<p>As we can see, <a href="#tbl-bmi-year" class="quarto-xref">Table 2</a> shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations of remain approximately constant, indicating no clear trend over time but consistent variability.</p>
+<p>As we can see, <a href="#tbl-bmi-year" class="quarto-xref">Table 2</a> shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.</p>
 </section>
 <section id="bmi-distribution-and-normality" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="bmi-distribution-and-normality"><span class="header-section-number">2.2</span> BMI Distribution and Normality</h2>
-<p><a href="#fig-bmi-hist" class="quarto-xref">Figure 1</a> displays the overall BMI distribution between 2008 and 2012.</p>
+<p><a href="#fig-bmi-hist" class="quarto-xref">Figure 1</a> displays the <strong>overall BMI distribution between 2008 and 2012</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bmi-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4180,7 +4180,7 @@ Figure 1: Histogram of BMI Distribution (2008-2012)
 </div>
 </div>
 <p>As we can see in <a href="#fig-bmi-hist" class="quarto-xref">Figure 1</a>, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25–28 BMI score.</p>
-<p><a href="#fig-bmi-qq" class="quarto-xref">Figure 2</a> assesses normality with a Q-Q plot.</p>
+<p><a href="#fig-bmi-qq" class="quarto-xref">Figure 2</a> assesses <strong>normality</strong> with a Q-Q plot.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bmi-qq" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4195,11 +4195,11 @@ Figure 2: Q-Q Plot of BMI for Normality Assessment
 </div>
 </div>
 </div>
-<p>In <a href="#fig-bmi-qq" class="quarto-xref">Figure 2</a>, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (e.g., log) might be needed for our analysis in <a href="#sec-FA" class="quarto-xref">Section 3</a>.</p>
+<p>In <a href="#fig-bmi-qq" class="quarto-xref">Figure 2</a>, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in <a href="#sec-FA" class="quarto-xref">Section 3</a>.</p>
 </section>
 <section id="bmi-over-time" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="bmi-over-time"><span class="header-section-number">2.3</span> BMI Over Time</h2>
-<p><a href="#fig-bmi-year" class="quarto-xref">Figure 3</a> shows our BMI distribution by year.</p>
+<p><a href="#fig-bmi-year" class="quarto-xref">Figure 3</a> shows our BMI distribution by <code>Year</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bmi-year" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4218,7 +4218,7 @@ Figure 3: Boxplot of BMI by Year
 </section>
 <section id="differences-observed-by-diet" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="differences-observed-by-diet"><span class="header-section-number">2.4</span> Differences Observed by Diet</h2>
-<p><a href="#fig-bmi-diet" class="quarto-xref">Figure 4</a> facets BMI by vegetable and fruit intake across years, which allows us to assess diet effects over time.</p>
+<p><a href="#fig-bmi-diet" class="quarto-xref">Figure 4</a> facets BMI by <code>Veg</code> and <code>Fruit</code> intake across years, which allows us to assess diet effects over time.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bmi-diet" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4233,51 +4233,51 @@ Figure 4: Boxplot of BMI by Year and Diet
 </div>
 </div>
 </div>
-<p>As can be observed in <a href="#fig-bmi-diet" class="quarto-xref">Figure 4</a>, the BMI distributions remain similar when <code>veg</code> intake is or is not present, no matter what the <code>fruit</code> intake is. We can see that there is potentially a slightly higher BMI associated with both <code>veg</code> and <code>fruit</code> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</p>
+<p>As can be observed in <a href="#fig-bmi-diet" class="quarto-xref">Figure 4</a>, the BMI distributions remain similar when <code>Veg</code> intake is or is not present, no matter what the <code>Fruit</code> intake is. We can see that there is potentially a slightly higher BMI associated with both <code>Veg</code> and <code>Fruit</code> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</p>
 </section>
 </section>
 <section id="sec-FA" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Formal Analysis</h1>
-<p>We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:</p>
+<p>We start by fitting the <strong>full multiple regression model</strong> containing <strong>all</strong> explanatory variables. The full model can be written as:</p>
 <p><span class="math display">\[ \begin{align}
 y_{i} &amp;= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \\ &amp;  \quad \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
 &amp; ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n \\
 \end{align}\]</span></p>
 <p>where:</p>
 <ul>
-<li><p><span class="math inline">\(\alpha\)</span> is the intercept of the regression line for the baseline of fruit and veg being ‘no’.</p></li>
-<li><p><span class="math inline">\(\beta_{AgeGroup}\)</span> is the intercept of the regression line for the specified age group.</p></li>
-<li><p><span class="math inline">\(\mathbb{I}_{AgeGroup}(x)\)</span> is an indicator function indicating the Age Group.</p>
+<li><p><span class="math inline">\(\alpha\)</span> is the intercept of the regression line for the baseline of <code>Fruit</code> and <code>Veg</code> being ‘no’.</p></li>
+<li><p><span class="math inline">\(\beta_{AgeGroup}\)</span> is the intercept of the regression line for the specified <code>Age</code> group.</p></li>
+<li><p><span class="math inline">\(\mathbb{I}_{AgeGroup}(x)\)</span> is an indicator function indicating the <code>Age</code> group.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{I}_{AgeGroup}(x)\)</span> is an indicator function indicating the Age Group.</li>
+<li><span class="math inline">\(\mathbb{I}_{AgeGroup}(x)\)</span> is an indicator function indicating the <code>Age</code> group.</li>
 </ul></li>
-<li><p><span class="math inline">\(\beta_{Sex}\)</span> is the intercept of the regression line for the specified gender.</p>
+<li><p><span class="math inline">\(\beta_{Sex}\)</span> is the intercept of the regression line for the specified <code>Sex</code>.</p>
 <ul>
 <li><span class="math inline">\(\mathbb{I}_{Sex}(x) = \begin{cases} 1&amp;\mbox{for male} \\ 0&amp;otherwise \end{cases}\)</span></li>
 </ul></li>
-<li><p><span class="math inline">\(\beta_{Employment}\)</span> is the intercept of the regression line for the specified employment status.</p>
+<li><p><span class="math inline">\(\beta_{Employment}\)</span> is the intercept of the regression line for the specified <code>Employment</code> status.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{I}_{Employment}(x)\)</span> is an indicator function indicating the Employment Status.</li>
+<li><span class="math inline">\(\mathbb{I}_{Employment}(x)\)</span> is an indicator function indicating the <code>Employment</code> status.</li>
 </ul></li>
-<li><p><span class="math inline">\(\beta_{Veg}\)</span> is the intercept of the regression line for the specified vegetable intake.</p>
+<li><p><span class="math inline">\(\beta_{Veg}\)</span> is the intercept of the regression line for the specified <code>Veg</code> intake.</p>
 <ul>
 <li><span class="math inline">\(\mathbb{I}_{Veg}(x) = \begin{cases} 1&amp;\mbox{for yes} \\ 0&amp;otherwise \end{cases}\)</span></li>
 </ul></li>
-<li><p><span class="math inline">\(\beta_{Fruit}\)</span> is the intercept of the regression line for the specified fruit intake.</p>
+<li><p><span class="math inline">\(\beta_{Fruit}\)</span> is the intercept of the regression line for the specified <code>Fruit</code> intake.</p>
 <ul>
 <li><span class="math inline">\(\mathbb{I}_{Fruit}(x) = \begin{cases} 1&amp;\mbox{for yes} \\ 0&amp;otherwise \end{cases}\)</span></li>
 </ul></li>
-<li><p><span class="math inline">\(\beta_{Year}\)</span> is the intercept of the regression line for the year.</p>
+<li><p><span class="math inline">\(\beta_{Year}\)</span> is the intercept of the regression line for the <code>Year</code>.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{I}_{Year}(x)\)</span> is an indicator function indicating the year.</li>
+<li><span class="math inline">\(\mathbb{I}_{Year}(x)\)</span> is an indicator function indicating the <code>Year</code>.</li>
 </ul></li>
 <li><p><span class="math inline">\(\epsilon_i\)</span> represents normally distributed errors.</p></li>
 </ul>
 <section id="stepwise-regression" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="stepwise-regression"><span class="header-section-number">3.1</span> Stepwise Regression</h2>
-<p>To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.</p>
-<p>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56, thus is the chosen model.</p>
-<p>The final regression model results are summarized in <a href="#tbl-regtable" class="quarto-xref">Table 3</a></p>
+<p>To refine the model, since there are so many variables, we apply <strong>stepwise regression</strong> with <strong>backward selection</strong> in order to reduce the model based on the <strong>Akaike Information Criterion (AIC)</strong>. In doing this, we aim to identify the best-fitting model.</p>
+<p>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.</p>
+<p>The final regression model results are summarised in <a href="#tbl-regtable" class="quarto-xref">Table 3</a>. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</p>
 <div class="cell">
 <div id="tbl-regtable" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -4286,20 +4286,20 @@ Table 3: Estimates of the regression model coeeficients
 </figcaption>
 <div aria-describedby="tbl-regtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tqkjyuituk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tqkjyuituk table {
+<div id="kkavsboyyl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kkavsboyyl table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#tqkjyuituk thead, #tqkjyuituk tbody, #tqkjyuituk tfoot, #tqkjyuituk tr, #tqkjyuituk td, #tqkjyuituk th {
+#kkavsboyyl thead, #kkavsboyyl tbody, #kkavsboyyl tfoot, #kkavsboyyl tr, #kkavsboyyl td, #kkavsboyyl th {
 border-style: none;
 }
-#tqkjyuituk p {
+#kkavsboyyl p {
 margin: 0;
 padding: 0;
 }
-#tqkjyuituk .gt_table {
+#kkavsboyyl .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -4324,11 +4324,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#tqkjyuituk .gt_caption {
+#kkavsboyyl .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#tqkjyuituk .gt_title {
+#kkavsboyyl .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -4339,7 +4339,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#tqkjyuituk .gt_subtitle {
+#kkavsboyyl .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -4350,7 +4350,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#tqkjyuituk .gt_heading {
+#kkavsboyyl .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -4361,12 +4361,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#tqkjyuituk .gt_bottom_border {
+#kkavsboyyl .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tqkjyuituk .gt_col_headings {
+#kkavsboyyl .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4380,7 +4380,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#tqkjyuituk .gt_col_heading {
+#kkavsboyyl .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4399,7 +4399,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#tqkjyuituk .gt_column_spanner_outer {
+#kkavsboyyl .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4410,13 +4410,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#tqkjyuituk .gt_column_spanner_outer:first-child {
+#kkavsboyyl .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#tqkjyuituk .gt_column_spanner_outer:last-child {
+#kkavsboyyl .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#tqkjyuituk .gt_column_spanner {
+#kkavsboyyl .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -4427,10 +4427,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#tqkjyuituk .gt_spanner_row {
+#kkavsboyyl .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#tqkjyuituk .gt_group_heading {
+#kkavsboyyl .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4455,7 +4455,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#tqkjyuituk .gt_empty_group_heading {
+#kkavsboyyl .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -4469,13 +4469,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#tqkjyuituk .gt_from_md > :first-child {
+#kkavsboyyl .gt_from_md > :first-child {
 margin-top: 0;
 }
-#tqkjyuituk .gt_from_md > :last-child {
+#kkavsboyyl .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#tqkjyuituk .gt_row {
+#kkavsboyyl .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4493,7 +4493,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#tqkjyuituk .gt_stub {
+#kkavsboyyl .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4505,7 +4505,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tqkjyuituk .gt_stub_row_group {
+#kkavsboyyl .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4518,13 +4518,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#tqkjyuituk .gt_row_group_first td {
+#kkavsboyyl .gt_row_group_first td {
 border-top-width: 2px;
 }
-#tqkjyuituk .gt_row_group_first th {
+#kkavsboyyl .gt_row_group_first th {
 border-top-width: 2px;
 }
-#tqkjyuituk .gt_summary_row {
+#kkavsboyyl .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -4533,14 +4533,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tqkjyuituk .gt_first_summary_row {
+#kkavsboyyl .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#tqkjyuituk .gt_first_summary_row.thick {
+#kkavsboyyl .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#tqkjyuituk .gt_last_summary_row {
+#kkavsboyyl .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4549,7 +4549,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tqkjyuituk .gt_grand_summary_row {
+#kkavsboyyl .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -4558,7 +4558,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tqkjyuituk .gt_first_grand_summary_row {
+#kkavsboyyl .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4567,7 +4567,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#tqkjyuituk .gt_last_grand_summary_row_top {
+#kkavsboyyl .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4576,10 +4576,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#tqkjyuituk .gt_striped {
+#kkavsboyyl .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#tqkjyuituk .gt_table_body {
+#kkavsboyyl .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4587,7 +4587,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tqkjyuituk .gt_footnotes {
+#kkavsboyyl .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4600,7 +4600,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#tqkjyuituk .gt_footnote {
+#kkavsboyyl .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -4608,7 +4608,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tqkjyuituk .gt_sourcenotes {
+#kkavsboyyl .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4621,64 +4621,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#tqkjyuituk .gt_sourcenote {
+#kkavsboyyl .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tqkjyuituk .gt_left {
+#kkavsboyyl .gt_left {
 text-align: left;
 }
-#tqkjyuituk .gt_center {
+#kkavsboyyl .gt_center {
 text-align: center;
 }
-#tqkjyuituk .gt_right {
+#kkavsboyyl .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#tqkjyuituk .gt_font_normal {
+#kkavsboyyl .gt_font_normal {
 font-weight: normal;
 }
-#tqkjyuituk .gt_font_bold {
+#kkavsboyyl .gt_font_bold {
 font-weight: bold;
 }
-#tqkjyuituk .gt_font_italic {
+#kkavsboyyl .gt_font_italic {
 font-style: italic;
 }
-#tqkjyuituk .gt_super {
+#kkavsboyyl .gt_super {
 font-size: 65%;
 }
-#tqkjyuituk .gt_footnote_marks {
+#kkavsboyyl .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#tqkjyuituk .gt_asterisk {
+#kkavsboyyl .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#tqkjyuituk .gt_indent_1 {
+#kkavsboyyl .gt_indent_1 {
 text-indent: 5px;
 }
-#tqkjyuituk .gt_indent_2 {
+#kkavsboyyl .gt_indent_2 {
 text-indent: 10px;
 }
-#tqkjyuituk .gt_indent_3 {
+#kkavsboyyl .gt_indent_3 {
 text-indent: 15px;
 }
-#tqkjyuituk .gt_indent_4 {
+#kkavsboyyl .gt_indent_4 {
 text-indent: 20px;
 }
-#tqkjyuituk .gt_indent_5 {
+#kkavsboyyl .gt_indent_5 {
 text-indent: 25px;
 }
-#tqkjyuituk .katex-display {
+#kkavsboyyl .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#tqkjyuituk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kkavsboyyl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -4831,11 +4831,11 @@ height: 0px !important;
 </figure>
 </div>
 </div>
-<p><a href="#tbl-regtable" class="quarto-xref">Table 3</a> provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</p>
+<p>As displayed in <a href="#tbl-regtable" class="quarto-xref">Table 3</a>, BMI increases with <code>Age</code>, with all age groups showing statistically significant positive estimates compared to the reference group (18-24). The largest increase peaks in the 55-64 age group in BMI and then decreases in the 75+ group. With respect to employment status, the overall trend, is when you are in full-time education your BMI tends to be lower than if you are permanently unable to work which illustrates an increase in 1.178 in BMI. Both looking after home/family and looking for/intending to look for paid work are not statistically significant in influencing BMI. Also with respect to lifestyle factors, consuming the recommended vegetable consumption significantly decreases the BMI, which emphasises the importance in vegetables in weight management.</p>
 </section>
 <section id="model-assumptions" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="model-assumptions"><span class="header-section-number">3.2</span> Model Assumptions</h2>
-<p>To ensure that regression assumptions hold, we analyse residuals demonstrated in <a href="#fig-residassump" class="quarto-xref">Figure 5</a> below.</p>
+<p>To ensure that regression assumptions hold, we analyse residuals depicted in <a href="#fig-residassump" class="quarto-xref">Figure 5</a> below.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-residassump" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4850,8 +4850,8 @@ Figure 5: Residual Diagnostic Plots for Stepwise Model
 </div>
 </div>
 </div>
-<p>The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.</p>
-<p>To confirm the validity of model assumptions, we visualise the normality of the residuals in <a href="#fig-normalresid" class="quarto-xref">Figure 6</a> below.</p>
+<p>The residual plots help check for <strong>normality</strong>, <strong>homoscedasticity</strong>, and <strong>potential outliers</strong>, all of which seem satisfied.</p>
+<p>To confirm the validity of model assumptions, we visualise the <strong>normality of the residuals</strong> in <a href="#fig-normalresid" class="quarto-xref">Figure 6</a> below.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-normalresid" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
@@ -4866,11 +4866,11 @@ Figure 6
 </div>
 </div>
 </div>
-<p>The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.</p>
+<p><a href="#fig-normalresid" class="quarto-xref">Figure 6</a> verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.</p>
 </section>
 <section id="interaction-effects" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="interaction-effects"><span class="header-section-number">3.3</span> Interaction Effects</h2>
-<p>We test for interactions between Sex and Employment, and Veg and Fruit to explore whether dietary factors interact with employment status or gender.</p>
+<p>We test for interactions between <code>Sex</code> and <code>Employment</code>, and <code>Veg</code> and <code>Fruit</code> intake to explore whether dietary factors interact with employment status or gender.</p>
 <div class="cell">
 <div id="tbl-ANOVA" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -4879,20 +4879,20 @@ Table 4: ANOVA compsrison of our Step Model against the Interaction Model.
 </figcaption>
 <div aria-describedby="tbl-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="omnppbfada" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#omnppbfada table {
+<div id="hxxcyfghqh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxxcyfghqh table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#omnppbfada thead, #omnppbfada tbody, #omnppbfada tfoot, #omnppbfada tr, #omnppbfada td, #omnppbfada th {
+#hxxcyfghqh thead, #hxxcyfghqh tbody, #hxxcyfghqh tfoot, #hxxcyfghqh tr, #hxxcyfghqh td, #hxxcyfghqh th {
 border-style: none;
 }
-#omnppbfada p {
+#hxxcyfghqh p {
 margin: 0;
 padding: 0;
 }
-#omnppbfada .gt_table {
+#hxxcyfghqh .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -4917,11 +4917,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#omnppbfada .gt_caption {
+#hxxcyfghqh .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#omnppbfada .gt_title {
+#hxxcyfghqh .gt_title {
 color: #333333;
 font-size: 16px;
 font-weight: initial;
@@ -4932,7 +4932,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#omnppbfada .gt_subtitle {
+#hxxcyfghqh .gt_subtitle {
 color: #333333;
 font-size: 14px;
 font-weight: initial;
@@ -4943,7 +4943,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#omnppbfada .gt_heading {
+#hxxcyfghqh .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -4954,12 +4954,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#omnppbfada .gt_bottom_border {
+#hxxcyfghqh .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#omnppbfada .gt_col_headings {
+#hxxcyfghqh .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4973,7 +4973,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#omnppbfada .gt_col_heading {
+#hxxcyfghqh .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4992,7 +4992,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#omnppbfada .gt_column_spanner_outer {
+#hxxcyfghqh .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5003,13 +5003,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#omnppbfada .gt_column_spanner_outer:first-child {
+#hxxcyfghqh .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#omnppbfada .gt_column_spanner_outer:last-child {
+#hxxcyfghqh .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#omnppbfada .gt_column_spanner {
+#hxxcyfghqh .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -5020,10 +5020,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#omnppbfada .gt_spanner_row {
+#hxxcyfghqh .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#omnppbfada .gt_group_heading {
+#hxxcyfghqh .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5048,7 +5048,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#omnppbfada .gt_empty_group_heading {
+#hxxcyfghqh .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -5062,13 +5062,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#omnppbfada .gt_from_md > :first-child {
+#hxxcyfghqh .gt_from_md > :first-child {
 margin-top: 0;
 }
-#omnppbfada .gt_from_md > :last-child {
+#hxxcyfghqh .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#omnppbfada .gt_row {
+#hxxcyfghqh .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5086,7 +5086,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#omnppbfada .gt_stub {
+#hxxcyfghqh .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5098,7 +5098,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#omnppbfada .gt_stub_row_group {
+#hxxcyfghqh .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5111,13 +5111,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#omnppbfada .gt_row_group_first td {
+#hxxcyfghqh .gt_row_group_first td {
 border-top-width: 2px;
 }
-#omnppbfada .gt_row_group_first th {
+#hxxcyfghqh .gt_row_group_first th {
 border-top-width: 2px;
 }
-#omnppbfada .gt_summary_row {
+#hxxcyfghqh .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5126,14 +5126,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#omnppbfada .gt_first_summary_row {
+#hxxcyfghqh .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#omnppbfada .gt_first_summary_row.thick {
+#hxxcyfghqh .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#omnppbfada .gt_last_summary_row {
+#hxxcyfghqh .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5142,7 +5142,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#omnppbfada .gt_grand_summary_row {
+#hxxcyfghqh .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5151,7 +5151,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#omnppbfada .gt_first_grand_summary_row {
+#hxxcyfghqh .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5160,7 +5160,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#omnppbfada .gt_last_grand_summary_row_top {
+#hxxcyfghqh .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5169,10 +5169,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#omnppbfada .gt_striped {
+#hxxcyfghqh .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#omnppbfada .gt_table_body {
+#hxxcyfghqh .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5180,7 +5180,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#omnppbfada .gt_footnotes {
+#hxxcyfghqh .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5193,7 +5193,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#omnppbfada .gt_footnote {
+#hxxcyfghqh .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -5201,7 +5201,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#omnppbfada .gt_sourcenotes {
+#hxxcyfghqh .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5214,64 +5214,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#omnppbfada .gt_sourcenote {
+#hxxcyfghqh .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#omnppbfada .gt_left {
+#hxxcyfghqh .gt_left {
 text-align: left;
 }
-#omnppbfada .gt_center {
+#hxxcyfghqh .gt_center {
 text-align: center;
 }
-#omnppbfada .gt_right {
+#hxxcyfghqh .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#omnppbfada .gt_font_normal {
+#hxxcyfghqh .gt_font_normal {
 font-weight: normal;
 }
-#omnppbfada .gt_font_bold {
+#hxxcyfghqh .gt_font_bold {
 font-weight: bold;
 }
-#omnppbfada .gt_font_italic {
+#hxxcyfghqh .gt_font_italic {
 font-style: italic;
 }
-#omnppbfada .gt_super {
+#hxxcyfghqh .gt_super {
 font-size: 65%;
 }
-#omnppbfada .gt_footnote_marks {
+#hxxcyfghqh .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#omnppbfada .gt_asterisk {
+#hxxcyfghqh .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#omnppbfada .gt_indent_1 {
+#hxxcyfghqh .gt_indent_1 {
 text-indent: 5px;
 }
-#omnppbfada .gt_indent_2 {
+#hxxcyfghqh .gt_indent_2 {
 text-indent: 10px;
 }
-#omnppbfada .gt_indent_3 {
+#hxxcyfghqh .gt_indent_3 {
 text-indent: 15px;
 }
-#omnppbfada .gt_indent_4 {
+#hxxcyfghqh .gt_indent_4 {
 text-indent: 20px;
 }
-#omnppbfada .gt_indent_5 {
+#hxxcyfghqh .gt_indent_5 {
 text-indent: 25px;
 }
-#omnppbfada .katex-display {
+#hxxcyfghqh .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#omnppbfada div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hxxcyfghqh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -5335,8 +5335,7 @@ height: 0px !important;
 </section>
 <section id="sec-conclusion" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Conclusions</h1>
-<p>[[[[<a href="#tbl-bmi-year" class="quarto-xref">As we can see from 2</a>]]]]</p>
-<p>When it comes to BMI distribution differences by age, gender, socio-economic status or lifestyle factors we can look at <a href="#tbl-regtable" class="quarto-xref">Table 3</a>. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing. For future work/extensions we can look at</p>
+<p>As we can see from <a href="#tbl-bmi-year" class="quarto-xref">Table 2</a> and <a href="#fig-bmi-year" class="quarto-xref">Figure 3</a> the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes thus time did not have a significant impact on BMI. However, lifestyle and demographic factors do influence BMI as shown by <a href="#sec-FA" class="quarto-xref">Section 3</a>. When it comes to BMI distribution differences by age,gender, socio-economic status or lifestyle factors we can look at <a href="#tbl-regtable" class="quarto-xref">Table 3</a>. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing.</p>
 <!-- -->
 
 </section>
@@ -5832,11 +5831,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction {#sec-intro}</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population&#39;s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <span class="in">`DAProject8`</span> dataset) uses factors such as <span class="in">`Age`</span>, <span class="in">`Sex`</span>, <span class="in">`Employment`</span> status, <span class="in">`Veg`</span> intake, <span class="in">`Fruit`</span> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The **Body Mass Index (BMI)** is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population&#39;s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <span class="in">`DAProject8`</span> dataset) uses factors such as <span class="in">`Age`</span>, <span class="in">`Sex`</span>, <span class="in">`Employment`</span> status, <span class="in">`Veg`</span> intake, <span class="in">`Fruit`</span> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>@sec-exploratory consists of the Exploratory Analysis of the survey&#39;s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>@sec-exploratory consists of the **Exploratory Analysis** of the survey&#39;s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>@sec-FA contains the results from fitting a **multiple regression model** to the data, as well as the assessment of the model assumptions.</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The concluding remarks will be given in @sec-conclusion.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
@@ -5844,7 +5843,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>In this section , we will explore the distribution of BMI from our <span class="in">`DAProject8`</span> dataset.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Here, we summarise BMI patterns and visualise distributions to investigate changes over time and differences by another factor in diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** **and variance assumptions**.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Here, we **summarise BMI patterns** and **visualise distributions** to investigate changes over time and differences by another factor, in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5868,7 +5867,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary Statistics</span></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-summary depicts the interquartile range, overall range and central tendency of the BMI in the time frame.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-summary depicts the **interquartile range**, **overall range** and **central tendency** of the BMI in the time frame.</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5900,7 +5899,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-year tracks changes in the mean, mdedian, standard deviation, and sample size over our time frame.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and **sample size** over our time frame.</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5927,11 +5926,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>bmi_by_year</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations of remain approximately constant, indicating no clear trend over time but consistent variability.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Distribution and Normality</span></span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>@fig-bmi-hist displays the overall BMI distribution between 2008 and 2012.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>@fig-bmi-hist displays the **overall BMI distribution between 2008 and 2012**.</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5948,7 +5947,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>@fig-bmi-qq assesses normality with a Q-Q plot.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>@fig-bmi-qq assesses **normality** with a Q-Q plot.</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5960,11 +5959,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(DAProject8<span class="sc">$</span>BMI, <span class="at">col =</span> <span class="st">&quot;firebrick1&quot;</span>)</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (e.g., log) might be needed for our analysis in @sec-FA.</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in @sec-FA.</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Over Time</span></span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>@fig-bmi-year shows our BMI distribution by year.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>@fig-bmi-year shows our BMI distribution by <span class="in">`Year`</span>.</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -5988,7 +5987,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Differences Observed by Diet</span></span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>@fig-bmi-diet facets BMI by vegetable and fruit intake across years, which allows us to assess diet effects over time.</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>@fig-bmi-diet facets BMI by <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake across years, which allows us to assess diet effects over time.</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -6011,11 +6010,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>bmi_diet_box</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>As can be observed in @fig-bmi-diet, the BMI distributions remain similar when <span class="in">`veg`</span> intake is or is not present, no matter what the <span class="in">`fruit`</span> intake is. We can see that there is potentially a slightly higher BMI associated with both <span class="in">`veg`</span> and <span class="in">`fruit`</span> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>As can be observed in @fig-bmi-diet, the BMI distributions remain similar when <span class="in">`Veg`</span> intake is or is not present, no matter what the <span class="in">`Fruit`</span> intake is. We can see that there is potentially a slightly higher BMI associated with both <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="fu"># Formal Analysis {#sec-FA}</span></span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>We start by fitting the **full multiple regression model** containing **all** explanatory variables. The full model can be written as:</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>$$ \begin{align}</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>y_{i} &amp;= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \\ &amp;  \quad \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, <span class="sc">\\</span></span>
@@ -6024,39 +6023,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>where:</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\alpha$ is the intercept of the regression line for the baseline of fruit and veg being &#39;no&#39;.</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\alpha$ is the intercept of the regression line for the baseline of <span class="in">`Fruit`</span> and <span class="in">`Veg`</span> being &#39;no&#39;.</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{AgeGroup}$ is the intercept of the regression line for the specified <span class="in">`Age`</span> group.</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Sex}$ is the intercept of the regression line for the specified gender.</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Sex}$ is the intercept of the regression line for the specified <span class="in">`Sex`</span>.</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Sex}(x) = \begin{cases} 1&amp;\mbox{for male} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Employment}$ is the intercept of the regression line for the specified employment status.</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Employment}$ is the intercept of the regression line for the specified <span class="in">`Employment`</span> status.</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Employment}(x)$ is an indicator function indicating the Employment Status.</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Employment}(x)$ is an indicator function indicating the <span class="in">`Employment`</span> status.</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Veg}$ is the intercept of the regression line for the specified <span class="in">`Veg`</span> intake.</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Veg}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Fruit}$ is the intercept of the regression line for the specified <span class="in">`Fruit`</span> intake.</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Fruit}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Year}$ is the intercept of the regression line for the year.</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Year}$ is the intercept of the regression line for the <span class="in">`Year`</span>.</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Year}(x)$ is an indicator function indicating the year.</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Year}(x)$ is an indicator function indicating the <span class="in">`Year`</span>.</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\epsilon_i$ represents normally distributed errors.</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stepwise Regression</span></span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model.</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
@@ -6080,9 +6079,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>AIC <span class="ot">&lt;-</span> step_model<span class="sc">$</span>anova</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56, thus is the chosen model.</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.</span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>The final regression model results are summarized in @tbl-regtable</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>The final regression model results are summarised in @tbl-regtable. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -6095,11 +6094,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">get_regression_table</span>(step_model)) <span class="sc">|&gt;</span> <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">3</span>)</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>@tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>As displayed in @tbl-regtable, BMI increases with <span class="in">`Age`</span>, with all age groups showing statistically significant positive estimates compared to the reference group (18-24). The largest increase peaks in the 55-64 age group in BMI and then decreases in the 75+ group. With respect to employment status, the overall trend, is when you are in full-time education your BMI tends to be lower than if you are permanently unable to work which illustrates an increase in 1.178 in BMI. Both looking after home/family and looking for/intending to look for paid work are not statistically significant in influencing BMI. Also with respect to lifestyle factors, consuming the recommended vegetable consumption significantly decreases the BMI, which emphasises the importance in vegetables in weight management.</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Assumptions</span></span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>To ensure that regression assumptions hold, we analyse residuals demonstrated in @fig-residassump below.</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>To ensure that regression assumptions hold, we analyse residuals depicted in @fig-residassump below.</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
@@ -6113,9 +6112,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(1, 1))</span></span>
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which seem satisfied.</span>
 <span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>To confirm the validity of model assumptions, we visualise the normality of the residuals in @fig-normalresid below.</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>To confirm the validity of model assumptions, we visualise the **normality of the residuals** in @fig-normalresid below.</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -6128,11 +6127,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Residuals&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Residuals&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interaction Effects</span></span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>We test for interactions between Sex and Employment, and Veg and Fruit to explore whether dietary factors interact with employment status or gender.</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>We test for interactions between <span class="in">`Sex`</span> and <span class="in">`Employment`</span>, and <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake to explore whether dietary factors interact with employment status or gender.</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
@@ -6198,9 +6197,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions {#sec-conclusion}</span></span>
 <span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>[[[[<span class="co">[</span><span class="ot">As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question.</span><span class="co">]</span><span class="sc">\]\]\]\]</span></span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>When it comes to BMI distribution differences by age, gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing. For future work/extensions we can look at</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes thus time did not have a significant impact on BMI. However, lifestyle and demographic factors do influence BMI as shown by @sec-FA. When it comes to BMI distribution differences by age,gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
