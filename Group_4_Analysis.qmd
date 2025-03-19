@@ -19,17 +19,19 @@ DAProject8 <- read_csv("DAProject8.csv")
 
 # Introduction {#sec-intro}
 
-Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population's health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the `DAProject8` dataset) uses factors such as `Age`, `Sex`, `Employment` status, `Veg` intake, `Fruit` intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
 
-@sec-exploratory consists of the exploratory analysis of the survey's data and explores the potential trends between the social-economic and lifestyle factors and the BMI, and whether, there are any differences in the BMI over the given years.
+@sec-exploratory consists of the Exploratory Analysis of the survey's data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.
 
-@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions. Through exploratory analysis and statistical tests the concluding remarks will be given in @sec-conclusion.
+@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions.
+
+The concluding remarks will be given in @sec-conclusion.
 
 # Exploratory Data Analysis {#sec-exploratory}
 
 In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
 
-We summarise BMI patterns and visualise distributions to investigate changes over time and differences by age, sex, employment, and diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** **and variance assumptions**.
+Here, we summarise BMI patterns and visualise distributions to investigate changes over time and differences by another factor in diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** **and variance assumptions**.
 
 ```{r}
 #| echo: false
@@ -112,7 +114,7 @@ bmi_by_year <- DAProject8 %>%
 bmi_by_year
 ```
 
-As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations of remain approximately constant, indicating no clear trend over time but consistent variability.
+As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.
 
 ## BMI Distribution and Normality
 
@@ -383,4 +385,6 @@ The next section will provide concluding remarks based on these findings.
 
 # Conclusions {#sec-conclusion}
 
-As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question. When it comes to BMI distribution differences by age,gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing. For future work/extensions we can look at
+[[[[[As we can see from @tbl-bmi-year and @fig-bmi-year with the mean BMI staying around 27-28 throughout the years and medians stable near 27 that there is no indicators any major change of BMI through the years 2008-2012 answering the first interest of question.]\]\]\]\]
+
+When it comes to BMI distribution differences by age, gender, socio-economic status or lifestyle factors we can look at @tbl-regtable. Here can we can see that BMI significantly goes on an upward trend as age increases generally. The 55-74 age generally having the largest increase. When it comes Employment we can see that in full time education the BMI decreases significantly. However for employed, self employed and government training seems to have a small but significant impact on increasing BMI. Being perm unable to work has the strongest impact on BMI increase when it comes to employment. Retired also seems to show significant effect in increase of BMI. Looking after home/family and looking/intending looking for work does not show any significant impact on the BMI. When it comes to lifestyle choices it seems that consuming the recommended amount of vegetables of a significant statistical impact on BMI decreasing. For future work/extensions we can look at
