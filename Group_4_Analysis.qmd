@@ -19,11 +19,11 @@ DAProject8 <- read_csv("DAProject8.csv")
 
 # Introduction {#sec-intro}
 
-Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population's health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the `DAProject8` dataset) uses factors such as `Age`, `Sex`, `Employment` status, `Veg` intake, `Fruit` intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The **Body Mass Index (BMI)** is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population's health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the `DAProject8` dataset) uses factors such as `Age`, `Sex`, `Employment` status, `Veg` intake, `Fruit` intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
 
-@sec-exploratory consists of the Exploratory Analysis of the survey's data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.
+@sec-exploratory consists of the **Exploratory Analysis** of the survey's data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.
 
-@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions.
+@sec-FA contains the results from fitting a **multiple regression model** to the data, as well as the assessment of the model assumptions.
 
 The concluding remarks will be given in @sec-conclusion.
 
@@ -31,7 +31,7 @@ The concluding remarks will be given in @sec-conclusion.
 
 In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
 
-Here, we summarise BMI patterns and visualise distributions to investigate changes over time and differences by another factor in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.
+Here, we **summarise BMI patterns** and **visualise distributions** to investigate changes over time and differences by another factor, in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.
 
 ```{r}
 #| echo: false
@@ -87,7 +87,7 @@ bmi_summary
 
 From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.
 
-@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and s**ample size** over our time frame.
+@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and **sample size** over our time frame.
 
 ```{r}
 #| echo: false
@@ -267,9 +267,9 @@ step_model <- stepAIC(bmi_model, direction = "backward", trace = FALSE)
 AIC <- step_model$anova
 ```
 
-The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56, thus is the chosen model.
+The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.
 
-The final regression model results are summarised in @tbl-regtable.
+The final regression model results are summarised in @tbl-regtable. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
 
 ```{r}
 #| echo: false
@@ -281,8 +281,11 @@ library(moderndive)
 # Display final selected model coefficients
 gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 ```
+As displayed in @tbl-regtable, BMI increases with `Age`, with all age groups showing statistically significant positive estimates compared to the reference group (`18-24`). The largest increase peaks in the `55-64` age group in BMI and then decreases in the `75+` group.
 
-@tbl-regtable provides estimates of the regression model coefficients, showing which factors significantly impact BMI. As displayed, BMI increases with age, with all age groups showing statistically significant positive estimates compared to the reference group (18-24). The largest increase peaks in the 55-64 age group in BMI and then decreases in the 75+ group. With respect to employment status, the overall trend, is when you are in full-time education your BMI tends to be lower than if you are permanently unable to work which illustrates an increase in 1.178 in BMI. Both looking after home/family and looking for/intending to look for paid work are not statistically significant in influencing BMI. Also with respect to lifestyle factors, consuming the recommended vegetable consumption significantly decreases the BMI, which emphasises the importance in vegetables in weight management.
+With respect to `Employment` status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI.
+
+Also, with respect to lifestyle factors, meeting the recommended `Veg` consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.
 
 ## Model Assumptions
 
@@ -300,7 +303,7 @@ plot(step_model)
 par(mfrow = c(1, 1))
 ```
 
-The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which seem satisfied.
+The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which appear satisfied in this case.
 
 To confirm the validity of model assumptions, we visualise the **normality of the residuals** in @fig-normalresid below.
 
@@ -315,7 +318,7 @@ ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals))
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
-@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
+@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centered at zero.
 
 ## Interaction Effects
 
@@ -371,7 +374,9 @@ anova_df %>%
   )
 ```
 
-As we can observe in @tbl-ANOVA, the ANOVA test assesses whether including interaction terms significantly improves model fit.
+The **ANOVA test** assesses whether including interaction terms significantly improves our model fit.
+
+As we can see in @tbl-ANOVA, the model which included the interaction terms **did**, in fact, exhibit a significant improvement on our model fit (as can be seen with our p-value being \<0.05).
 
 The next section will provide concluding remarks based on these findings.
 
