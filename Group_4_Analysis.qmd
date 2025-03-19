@@ -19,17 +19,19 @@ DAProject8 <- read_csv("DAProject8.csv")
 
 # Introduction {#sec-intro}
 
-Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the populations health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey uses factors such as age, sex, employment status, vegetable intake, fruit intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
+Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The Body Mass Index (BMI) is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population's health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the `DAProject8` dataset) uses factors such as `Age`, `Sex`, `Employment` status, `Veg` intake, `Fruit` intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
 
-@sec-exploratory consists of the exploratory analysis of the survey's data and explores the potential trends between the social-economic and lifestyle factors and the BMI, and whether, there are any differences in the BMI over the given years.
+@sec-exploratory consists of the Exploratory Analysis of the survey's data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.
 
-@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions. Through exploratory analysis and statistical tests the concluding remarks will be given in @sec-conclusion.
+@sec-FA contains the results from fitting a multiple regression model to the data, as well as the assessment of the model assumptions.
+
+The concluding remarks will be given in @sec-conclusion.
 
 # Exploratory Data Analysis {#sec-exploratory}
 
 In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
 
-We summarise BMI patterns and visualise distributions to investigate changes over time and differences by age, sex, employment, and diet (specifically fruit and veg intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** **and variance assumptions**.
+Here, we summarise BMI patterns and visualise distributions to investigate changes over time and differences by another factor in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.
 
 ```{r}
 #| echo: false
@@ -53,7 +55,7 @@ DAProject8 <- DAProject8 %>%
 
 ## Summary Statistics
 
-@tbl-bmi-summary depicts the interquartile range, overall range and central tendency of the BMI in the time frame.
+@tbl-bmi-summary depicts the **interquartile range**, **overall range** and **central tendency** of the BMI in the time frame.
 
 ```{r}
 #| echo: false
@@ -85,7 +87,7 @@ bmi_summary
 
 From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.
 
-@tbl-bmi-year tracks changes in the mean, mdedian, standard deviation, and sample size over our time frame.
+@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and s**ample size** over our time frame.
 
 ```{r}
 #| echo: false
@@ -112,11 +114,11 @@ bmi_by_year <- DAProject8 %>%
 bmi_by_year
 ```
 
-As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations of remain approximately constant, indicating no clear trend over time but consistent variability.
+As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.
 
 ## BMI Distribution and Normality
 
-@fig-bmi-hist displays the overall BMI distribution between 2008 and 2012.
+@fig-bmi-hist displays the **overall BMI distribution between 2008 and 2012**.
 
 ```{r}
 #| echo: false
@@ -133,7 +135,7 @@ bmi_hist
 
 As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.
 
-@fig-bmi-qq assesses normality with a Q-Q plot.
+@fig-bmi-qq assesses **normality** with a Q-Q plot.
 
 ```{r}
 #| echo: false
@@ -145,11 +147,11 @@ qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
 qqline(DAProject8$BMI, col = "firebrick1")
 ```
 
-In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (e.g., log) might be needed for our analysis in @sec-FA.
+In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in @sec-FA.
 
 ## BMI Over Time
 
-@fig-bmi-year shows our BMI distribution by year.
+@fig-bmi-year shows our BMI distribution by `Year`.
 
 ```{r}
 #| echo: false
@@ -173,7 +175,7 @@ As displayed in @fig-bmi-year, our distributions appear similar throughout, with
 
 ## Differences Observed by Diet
 
-@fig-bmi-diet facets BMI by vegetable and fruit intake across years, which allows us to assess diet effects over time.
+@fig-bmi-diet facets BMI by `Veg` and `Fruit` intake across years, which allows us to assess diet effects over time.
 
 ```{r}
 #| echo: false
@@ -196,11 +198,11 @@ bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
 bmi_diet_box
 ```
 
-As can be observed in @fig-bmi-diet, the BMI distributions remain similar when `veg` intake is or is not present, no matter what the `fruit` intake is. We can see that there is potentially a slightly higher BMI associated with both `veg` and `fruit` being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.
+As can be observed in @fig-bmi-diet, the BMI distributions remain similar when `Veg` intake is or is not present, no matter what the `Fruit` intake is. We can see that there is potentially a slightly higher BMI associated with both `Veg` and `Fruit` being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.
 
 # Formal Analysis {#sec-FA}
 
-We start by fitting the full multiple regression model containing all explanatory variables. The full model can be written as:
+We start by fitting the **full multiple regression model** containing **all** explanatory variables. The full model can be written as:
 
 $$ \begin{align}
 y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \\ &  \quad \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, \\
@@ -209,39 +211,39 @@ y_{i} &= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} 
 
 where:
 
--   $\alpha$ is the intercept of the regression line for the baseline of fruit and veg being 'no'.
+-   $\alpha$ is the intercept of the regression line for the baseline of `Fruit` and `Veg` being 'no'.
 
--   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified age group.
+-   $\beta_{AgeGroup}$ is the intercept of the regression line for the specified `Age` group.
 
--   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+-   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the `Age` group.
 
-    -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the Age Group.
+    -   $\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the `Age` group.
 
--   $\beta_{Sex}$ is the intercept of the regression line for the specified gender.
+-   $\beta_{Sex}$ is the intercept of the regression line for the specified `Sex`.
 
     -   $\mathbb{I}_{Sex}(x) = \begin{cases} 1&\mbox{for male} \\ 0&otherwise \end{cases}$
 
--   $\beta_{Employment}$ is the intercept of the regression line for the specified employment status.
+-   $\beta_{Employment}$ is the intercept of the regression line for the specified `Employment` status.
 
-    -   $\mathbb{I}_{Employment}(x)$ is an indicator function indicating the Employment Status.
+    -   $\mathbb{I}_{Employment}(x)$ is an indicator function indicating the `Employment` status.
 
--   $\beta_{Veg}$ is the intercept of the regression line for the specified vegetable intake.
+-   $\beta_{Veg}$ is the intercept of the regression line for the specified `Veg` intake.
 
     -   $\mathbb{I}_{Veg}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
--   $\beta_{Fruit}$ is the intercept of the regression line for the specified fruit intake.
+-   $\beta_{Fruit}$ is the intercept of the regression line for the specified `Fruit` intake.
 
     -   $\mathbb{I}_{Fruit}(x) = \begin{cases} 1&\mbox{for yes} \\ 0&otherwise \end{cases}$
 
--   $\beta_{Year}$ is the intercept of the regression line for the year.
+-   $\beta_{Year}$ is the intercept of the regression line for the `Year`.
 
-    -   $\mathbb{I}_{Year}(x)$ is an indicator function indicating the year.
+    -   $\mathbb{I}_{Year}(x)$ is an indicator function indicating the `Year`.
 
 -   $\epsilon_i$ represents normally distributed errors.
 
 ## Stepwise Regression
 
-To refine the model, since there are so many variables, we apply stepwise regression with backward selection in order to reduce the model based on the Akaike Information Criterion (AIC). In doing this, we aim to identify the best-fitting model.
+To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model.
 
 ```{r}
 #| warning: false
@@ -267,7 +269,7 @@ AIC <- step_model$anova
 
 The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56, thus is the chosen model.
 
-The final regression model results are summarized in @tbl-regtable
+The final regression model results are summarised in @tbl-regtable.
 
 ```{r}
 #| echo: false
@@ -284,7 +286,7 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 
 ## Model Assumptions
 
-To ensure that regression assumptions hold, we analyse residuals demonstrated in @fig-residassump below.
+To ensure that regression assumptions hold, we analyse residuals depicted in @fig-residassump below.
 
 ```{r, echo=FALSE}
 #| echo: false
@@ -298,9 +300,9 @@ plot(step_model)
 par(mfrow = c(1, 1))
 ```
 
-The residual plots help check for normality, homoscedasticity, and potential outliers, all of which seem satisfied.
+The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which seem satisfied.
 
-To confirm the validity of model assumptions, we visualise the normality of the residuals in @fig-normalresid below.
+To confirm the validity of model assumptions, we visualise the **normality of the residuals** in @fig-normalresid below.
 
 ```{r}
 #| echo: false
@@ -313,11 +315,11 @@ ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals))
   labs(title = "Histogram of Residuals", x = "Residuals", y = "Count")
 ```
 
-The histogram verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
+@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centred at zero.
 
 ## Interaction Effects
 
-We test for interactions between Sex and Employment, and Veg and Fruit to explore whether dietary factors interact with employment status or gender.
+We test for interactions between `Sex` and `Employment`, and `Veg` and `Fruit` intake to explore whether dietary factors interact with employment status or gender.
 
 ```{r}
 #| echo: false
