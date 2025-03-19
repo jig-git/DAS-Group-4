@@ -125,6 +125,8 @@ As we can see, @tbl-bmi-year shows that both the mean and median BMI remains bet
 #| eval: true
 #| label: fig-bmi-hist
 #| fig-cap: "Histogram of BMI Distribution (2008-2012)"
+#| fig-width: 3
+#| fig-height: 2
 
 bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
   geom_histogram(binwidth = 2, fill = "dodgerblue4", color = "white") +
@@ -142,6 +144,8 @@ As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, 
 #| eval: true
 #| label: fig-bmi-qq
 #| fig-cap: "Q-Q Plot of BMI for Normality Assessment"
+#| fig-width: 3
+#| fig-height: 3
 
 qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
 qqline(DAProject8$BMI, col = "firebrick1")
@@ -158,6 +162,8 @@ In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confir
 #| eval: true
 #| label: fig-bmi-year
 #| fig-cap: "Boxplot of BMI by Year"
+#| fig-width: 4
+#| fig-height: 2
 
 bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Year)) +
   geom_boxplot() +
@@ -182,6 +188,8 @@ As displayed in @fig-bmi-year, our distributions appear similar throughout, with
 #| eval: true
 #| label: fig-bmi-diet
 #| fig-cap: "Boxplot of BMI by Year and Diet"
+#| fig-width: 4
+#| fig-height: 3
 
 DAProject8 <- DAProject8 %>%
   mutate(Veg_Fruit = interaction(Veg, Fruit, sep = "/"))
@@ -275,6 +283,8 @@ The final regression model results are summarised in @tbl-regtable. This provide
 #| echo: false
 #| label: tbl-regtable
 #| tbl-cap: Estimates of the regression model coeeficients
+#| fig-width: 4
+#| fig-height: 2
 
 library(moderndive)
 
@@ -296,8 +306,8 @@ To ensure that regression assumptions hold, we analyse residuals depicted in @fi
 #| echo: false
 #| label: fig-residassump
 #| fig-cap: "Residual Diagnostic Plots for Stepwise Model"
-#| fig-width: 10
-#| fig-height: 6
+#| fig-width: 4
+#| fig-height: 4
 
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
 plot(step_model)
@@ -311,6 +321,8 @@ To confirm the validity of model assumptions, we visualise the **normality of th
 ```{r}
 #| echo: false
 #| label: fig-normalresid
+#| fig-width: 3
+#| fig-height: 2
 
 # Plot residuals
 library(ggplot2)
