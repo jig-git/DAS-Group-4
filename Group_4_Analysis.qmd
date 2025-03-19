@@ -21,12 +21,6 @@ DAProject8 <- read_csv("DAProject8.csv")
 
 Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The **Body Mass Index (BMI)** is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population's health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the `DAProject8` dataset) uses factors such as `Age`, `Sex`, `Employment` status, `Veg` intake, `Fruit` intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.
 
-@sec-exploratory consists of the **Exploratory Analysis** of the survey's data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.
-
-@sec-FA contains the results from fitting a **multiple regression model** to the data, as well as the assessment of the model assumptions.
-
-The concluding remarks will be given in @sec-conclusion.
-
 # Exploratory Data Analysis {#sec-exploratory}
 
 In this section , we will explore the distribution of BMI from our `DAProject8` dataset.

@@ -3253,9 +3253,6 @@ window.Quarto = {
 <section id="sec-intro" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The <strong>Body Mass Index (BMI)</strong> is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population’s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <code>DAProject8</code> dataset) uses factors such as <code>Age</code>, <code>Sex</code>, <code>Employment</code> status, <code>Veg</code> intake, <code>Fruit</code> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</p>
-<p><a href="#sec-exploratory" class="quarto-xref">Section 2</a> consists of the <strong>Exploratory Analysis</strong> of the survey’s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</p>
-<p><a href="#sec-FA" class="quarto-xref">Section 3</a> contains the results from fitting a <strong>multiple regression model</strong> to the data, as well as the assessment of the model assumptions.</p>
-<p>The concluding remarks will be given in <a href="#sec-conclusion" class="quarto-xref">Section 4</a>.</p>
 </section>
 <section id="sec-exploratory" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Exploratory Data Analysis</h1>
@@ -3272,20 +3269,20 @@ Table 1: Overall Summary Statistics of BMI
 </figcaption>
 <div aria-describedby="tbl-bmi-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gaghmndnpv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gaghmndnpv table {
+<div id="qajlnmfptu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qajlnmfptu table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#gaghmndnpv thead, #gaghmndnpv tbody, #gaghmndnpv tfoot, #gaghmndnpv tr, #gaghmndnpv td, #gaghmndnpv th {
+#qajlnmfptu thead, #qajlnmfptu tbody, #qajlnmfptu tfoot, #qajlnmfptu tr, #qajlnmfptu td, #qajlnmfptu th {
 border-style: none;
 }
-#gaghmndnpv p {
+#qajlnmfptu p {
 margin: 0;
 padding: 0;
 }
-#gaghmndnpv .gt_table {
+#qajlnmfptu .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3310,11 +3307,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#gaghmndnpv .gt_caption {
+#qajlnmfptu .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#gaghmndnpv .gt_title {
+#qajlnmfptu .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3325,7 +3322,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#gaghmndnpv .gt_subtitle {
+#qajlnmfptu .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3336,7 +3333,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#gaghmndnpv .gt_heading {
+#qajlnmfptu .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3347,12 +3344,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#gaghmndnpv .gt_bottom_border {
+#qajlnmfptu .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gaghmndnpv .gt_col_headings {
+#qajlnmfptu .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3366,7 +3363,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#gaghmndnpv .gt_col_heading {
+#qajlnmfptu .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3385,7 +3382,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#gaghmndnpv .gt_column_spanner_outer {
+#qajlnmfptu .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3396,13 +3393,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#gaghmndnpv .gt_column_spanner_outer:first-child {
+#qajlnmfptu .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#gaghmndnpv .gt_column_spanner_outer:last-child {
+#qajlnmfptu .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#gaghmndnpv .gt_column_spanner {
+#qajlnmfptu .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3413,10 +3410,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#gaghmndnpv .gt_spanner_row {
+#qajlnmfptu .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#gaghmndnpv .gt_group_heading {
+#qajlnmfptu .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3441,7 +3438,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#gaghmndnpv .gt_empty_group_heading {
+#qajlnmfptu .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3455,13 +3452,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#gaghmndnpv .gt_from_md > :first-child {
+#qajlnmfptu .gt_from_md > :first-child {
 margin-top: 0;
 }
-#gaghmndnpv .gt_from_md > :last-child {
+#qajlnmfptu .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#gaghmndnpv .gt_row {
+#qajlnmfptu .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3479,7 +3476,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#gaghmndnpv .gt_stub {
+#qajlnmfptu .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3491,7 +3488,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gaghmndnpv .gt_stub_row_group {
+#qajlnmfptu .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3504,13 +3501,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#gaghmndnpv .gt_row_group_first td {
+#qajlnmfptu .gt_row_group_first td {
 border-top-width: 2px;
 }
-#gaghmndnpv .gt_row_group_first th {
+#qajlnmfptu .gt_row_group_first th {
 border-top-width: 2px;
 }
-#gaghmndnpv .gt_summary_row {
+#qajlnmfptu .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3519,14 +3516,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gaghmndnpv .gt_first_summary_row {
+#qajlnmfptu .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#gaghmndnpv .gt_first_summary_row.thick {
+#qajlnmfptu .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#gaghmndnpv .gt_last_summary_row {
+#qajlnmfptu .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3535,7 +3532,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gaghmndnpv .gt_grand_summary_row {
+#qajlnmfptu .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3544,7 +3541,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gaghmndnpv .gt_first_grand_summary_row {
+#qajlnmfptu .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3553,7 +3550,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#gaghmndnpv .gt_last_grand_summary_row_top {
+#qajlnmfptu .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3562,10 +3559,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#gaghmndnpv .gt_striped {
+#qajlnmfptu .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#gaghmndnpv .gt_table_body {
+#qajlnmfptu .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3573,7 +3570,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gaghmndnpv .gt_footnotes {
+#qajlnmfptu .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3586,7 +3583,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#gaghmndnpv .gt_footnote {
+#qajlnmfptu .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -3594,7 +3591,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gaghmndnpv .gt_sourcenotes {
+#qajlnmfptu .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3607,64 +3604,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#gaghmndnpv .gt_sourcenote {
+#qajlnmfptu .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gaghmndnpv .gt_left {
+#qajlnmfptu .gt_left {
 text-align: left;
 }
-#gaghmndnpv .gt_center {
+#qajlnmfptu .gt_center {
 text-align: center;
 }
-#gaghmndnpv .gt_right {
+#qajlnmfptu .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#gaghmndnpv .gt_font_normal {
+#qajlnmfptu .gt_font_normal {
 font-weight: normal;
 }
-#gaghmndnpv .gt_font_bold {
+#qajlnmfptu .gt_font_bold {
 font-weight: bold;
 }
-#gaghmndnpv .gt_font_italic {
+#qajlnmfptu .gt_font_italic {
 font-style: italic;
 }
-#gaghmndnpv .gt_super {
+#qajlnmfptu .gt_super {
 font-size: 65%;
 }
-#gaghmndnpv .gt_footnote_marks {
+#qajlnmfptu .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#gaghmndnpv .gt_asterisk {
+#qajlnmfptu .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#gaghmndnpv .gt_indent_1 {
+#qajlnmfptu .gt_indent_1 {
 text-indent: 5px;
 }
-#gaghmndnpv .gt_indent_2 {
+#qajlnmfptu .gt_indent_2 {
 text-indent: 10px;
 }
-#gaghmndnpv .gt_indent_3 {
+#qajlnmfptu .gt_indent_3 {
 text-indent: 15px;
 }
-#gaghmndnpv .gt_indent_4 {
+#qajlnmfptu .gt_indent_4 {
 text-indent: 20px;
 }
-#gaghmndnpv .gt_indent_5 {
+#qajlnmfptu .gt_indent_5 {
 text-indent: 25px;
 }
-#gaghmndnpv .katex-display {
+#qajlnmfptu .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#gaghmndnpv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qajlnmfptu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -3708,20 +3705,20 @@ Table 2: Mean, Median, and Standard Deviation of BMI by Year
 </figcaption>
 <div aria-describedby="tbl-bmi-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kquvwoegnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kquvwoegnq table {
+<div id="epwzxaytlf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#epwzxaytlf table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#kquvwoegnq thead, #kquvwoegnq tbody, #kquvwoegnq tfoot, #kquvwoegnq tr, #kquvwoegnq td, #kquvwoegnq th {
+#epwzxaytlf thead, #epwzxaytlf tbody, #epwzxaytlf tfoot, #epwzxaytlf tr, #epwzxaytlf td, #epwzxaytlf th {
 border-style: none;
 }
-#kquvwoegnq p {
+#epwzxaytlf p {
 margin: 0;
 padding: 0;
 }
-#kquvwoegnq .gt_table {
+#epwzxaytlf .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3746,11 +3743,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#kquvwoegnq .gt_caption {
+#epwzxaytlf .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#kquvwoegnq .gt_title {
+#epwzxaytlf .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3761,7 +3758,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#kquvwoegnq .gt_subtitle {
+#epwzxaytlf .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3772,7 +3769,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#kquvwoegnq .gt_heading {
+#epwzxaytlf .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3783,12 +3780,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#kquvwoegnq .gt_bottom_border {
+#epwzxaytlf .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#kquvwoegnq .gt_col_headings {
+#epwzxaytlf .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3802,7 +3799,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#kquvwoegnq .gt_col_heading {
+#epwzxaytlf .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3821,7 +3818,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#kquvwoegnq .gt_column_spanner_outer {
+#epwzxaytlf .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3832,13 +3829,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#kquvwoegnq .gt_column_spanner_outer:first-child {
+#epwzxaytlf .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#kquvwoegnq .gt_column_spanner_outer:last-child {
+#epwzxaytlf .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#kquvwoegnq .gt_column_spanner {
+#epwzxaytlf .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3849,10 +3846,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#kquvwoegnq .gt_spanner_row {
+#epwzxaytlf .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#kquvwoegnq .gt_group_heading {
+#epwzxaytlf .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3877,7 +3874,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#kquvwoegnq .gt_empty_group_heading {
+#epwzxaytlf .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3891,13 +3888,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#kquvwoegnq .gt_from_md > :first-child {
+#epwzxaytlf .gt_from_md > :first-child {
 margin-top: 0;
 }
-#kquvwoegnq .gt_from_md > :last-child {
+#epwzxaytlf .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#kquvwoegnq .gt_row {
+#epwzxaytlf .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3915,7 +3912,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#kquvwoegnq .gt_stub {
+#epwzxaytlf .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3927,7 +3924,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#kquvwoegnq .gt_stub_row_group {
+#epwzxaytlf .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3940,13 +3937,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#kquvwoegnq .gt_row_group_first td {
+#epwzxaytlf .gt_row_group_first td {
 border-top-width: 2px;
 }
-#kquvwoegnq .gt_row_group_first th {
+#epwzxaytlf .gt_row_group_first th {
 border-top-width: 2px;
 }
-#kquvwoegnq .gt_summary_row {
+#epwzxaytlf .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3955,14 +3952,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#kquvwoegnq .gt_first_summary_row {
+#epwzxaytlf .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#kquvwoegnq .gt_first_summary_row.thick {
+#epwzxaytlf .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#kquvwoegnq .gt_last_summary_row {
+#epwzxaytlf .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3971,7 +3968,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#kquvwoegnq .gt_grand_summary_row {
+#epwzxaytlf .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3980,7 +3977,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#kquvwoegnq .gt_first_grand_summary_row {
+#epwzxaytlf .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3989,7 +3986,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#kquvwoegnq .gt_last_grand_summary_row_top {
+#epwzxaytlf .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3998,10 +3995,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#kquvwoegnq .gt_striped {
+#epwzxaytlf .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#kquvwoegnq .gt_table_body {
+#epwzxaytlf .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4009,7 +4006,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#kquvwoegnq .gt_footnotes {
+#epwzxaytlf .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4022,7 +4019,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#kquvwoegnq .gt_footnote {
+#epwzxaytlf .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -4030,7 +4027,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#kquvwoegnq .gt_sourcenotes {
+#epwzxaytlf .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4043,64 +4040,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#kquvwoegnq .gt_sourcenote {
+#epwzxaytlf .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#kquvwoegnq .gt_left {
+#epwzxaytlf .gt_left {
 text-align: left;
 }
-#kquvwoegnq .gt_center {
+#epwzxaytlf .gt_center {
 text-align: center;
 }
-#kquvwoegnq .gt_right {
+#epwzxaytlf .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#kquvwoegnq .gt_font_normal {
+#epwzxaytlf .gt_font_normal {
 font-weight: normal;
 }
-#kquvwoegnq .gt_font_bold {
+#epwzxaytlf .gt_font_bold {
 font-weight: bold;
 }
-#kquvwoegnq .gt_font_italic {
+#epwzxaytlf .gt_font_italic {
 font-style: italic;
 }
-#kquvwoegnq .gt_super {
+#epwzxaytlf .gt_super {
 font-size: 65%;
 }
-#kquvwoegnq .gt_footnote_marks {
+#epwzxaytlf .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#kquvwoegnq .gt_asterisk {
+#epwzxaytlf .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#kquvwoegnq .gt_indent_1 {
+#epwzxaytlf .gt_indent_1 {
 text-indent: 5px;
 }
-#kquvwoegnq .gt_indent_2 {
+#epwzxaytlf .gt_indent_2 {
 text-indent: 10px;
 }
-#kquvwoegnq .gt_indent_3 {
+#epwzxaytlf .gt_indent_3 {
 text-indent: 15px;
 }
-#kquvwoegnq .gt_indent_4 {
+#epwzxaytlf .gt_indent_4 {
 text-indent: 20px;
 }
-#kquvwoegnq .gt_indent_5 {
+#epwzxaytlf .gt_indent_5 {
 text-indent: 25px;
 }
-#kquvwoegnq .katex-display {
+#epwzxaytlf .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#kquvwoegnq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#epwzxaytlf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -4286,20 +4283,20 @@ Table 3: Estimates of the regression model coeeficients
 </figcaption>
 <div aria-describedby="tbl-regtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rscmwchmmt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rscmwchmmt table {
+<div id="vimzmuhwcn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vimzmuhwcn table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#rscmwchmmt thead, #rscmwchmmt tbody, #rscmwchmmt tfoot, #rscmwchmmt tr, #rscmwchmmt td, #rscmwchmmt th {
+#vimzmuhwcn thead, #vimzmuhwcn tbody, #vimzmuhwcn tfoot, #vimzmuhwcn tr, #vimzmuhwcn td, #vimzmuhwcn th {
 border-style: none;
 }
-#rscmwchmmt p {
+#vimzmuhwcn p {
 margin: 0;
 padding: 0;
 }
-#rscmwchmmt .gt_table {
+#vimzmuhwcn .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -4324,11 +4321,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#rscmwchmmt .gt_caption {
+#vimzmuhwcn .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#rscmwchmmt .gt_title {
+#vimzmuhwcn .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -4339,7 +4336,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#rscmwchmmt .gt_subtitle {
+#vimzmuhwcn .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -4350,7 +4347,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#rscmwchmmt .gt_heading {
+#vimzmuhwcn .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -4361,12 +4358,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#rscmwchmmt .gt_bottom_border {
+#vimzmuhwcn .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#rscmwchmmt .gt_col_headings {
+#vimzmuhwcn .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4380,7 +4377,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#rscmwchmmt .gt_col_heading {
+#vimzmuhwcn .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4399,7 +4396,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#rscmwchmmt .gt_column_spanner_outer {
+#vimzmuhwcn .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4410,13 +4407,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#rscmwchmmt .gt_column_spanner_outer:first-child {
+#vimzmuhwcn .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#rscmwchmmt .gt_column_spanner_outer:last-child {
+#vimzmuhwcn .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#rscmwchmmt .gt_column_spanner {
+#vimzmuhwcn .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -4427,10 +4424,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#rscmwchmmt .gt_spanner_row {
+#vimzmuhwcn .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#rscmwchmmt .gt_group_heading {
+#vimzmuhwcn .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4455,7 +4452,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#rscmwchmmt .gt_empty_group_heading {
+#vimzmuhwcn .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -4469,13 +4466,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#rscmwchmmt .gt_from_md > :first-child {
+#vimzmuhwcn .gt_from_md > :first-child {
 margin-top: 0;
 }
-#rscmwchmmt .gt_from_md > :last-child {
+#vimzmuhwcn .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#rscmwchmmt .gt_row {
+#vimzmuhwcn .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4493,7 +4490,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#rscmwchmmt .gt_stub {
+#vimzmuhwcn .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4505,7 +4502,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#rscmwchmmt .gt_stub_row_group {
+#vimzmuhwcn .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4518,13 +4515,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#rscmwchmmt .gt_row_group_first td {
+#vimzmuhwcn .gt_row_group_first td {
 border-top-width: 2px;
 }
-#rscmwchmmt .gt_row_group_first th {
+#vimzmuhwcn .gt_row_group_first th {
 border-top-width: 2px;
 }
-#rscmwchmmt .gt_summary_row {
+#vimzmuhwcn .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -4533,14 +4530,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#rscmwchmmt .gt_first_summary_row {
+#vimzmuhwcn .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#rscmwchmmt .gt_first_summary_row.thick {
+#vimzmuhwcn .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#rscmwchmmt .gt_last_summary_row {
+#vimzmuhwcn .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4549,7 +4546,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#rscmwchmmt .gt_grand_summary_row {
+#vimzmuhwcn .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -4558,7 +4555,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#rscmwchmmt .gt_first_grand_summary_row {
+#vimzmuhwcn .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4567,7 +4564,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#rscmwchmmt .gt_last_grand_summary_row_top {
+#vimzmuhwcn .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4576,10 +4573,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#rscmwchmmt .gt_striped {
+#vimzmuhwcn .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#rscmwchmmt .gt_table_body {
+#vimzmuhwcn .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4587,7 +4584,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#rscmwchmmt .gt_footnotes {
+#vimzmuhwcn .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4600,7 +4597,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#rscmwchmmt .gt_footnote {
+#vimzmuhwcn .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -4608,7 +4605,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#rscmwchmmt .gt_sourcenotes {
+#vimzmuhwcn .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4621,64 +4618,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#rscmwchmmt .gt_sourcenote {
+#vimzmuhwcn .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#rscmwchmmt .gt_left {
+#vimzmuhwcn .gt_left {
 text-align: left;
 }
-#rscmwchmmt .gt_center {
+#vimzmuhwcn .gt_center {
 text-align: center;
 }
-#rscmwchmmt .gt_right {
+#vimzmuhwcn .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#rscmwchmmt .gt_font_normal {
+#vimzmuhwcn .gt_font_normal {
 font-weight: normal;
 }
-#rscmwchmmt .gt_font_bold {
+#vimzmuhwcn .gt_font_bold {
 font-weight: bold;
 }
-#rscmwchmmt .gt_font_italic {
+#vimzmuhwcn .gt_font_italic {
 font-style: italic;
 }
-#rscmwchmmt .gt_super {
+#vimzmuhwcn .gt_super {
 font-size: 65%;
 }
-#rscmwchmmt .gt_footnote_marks {
+#vimzmuhwcn .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#rscmwchmmt .gt_asterisk {
+#vimzmuhwcn .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#rscmwchmmt .gt_indent_1 {
+#vimzmuhwcn .gt_indent_1 {
 text-indent: 5px;
 }
-#rscmwchmmt .gt_indent_2 {
+#vimzmuhwcn .gt_indent_2 {
 text-indent: 10px;
 }
-#rscmwchmmt .gt_indent_3 {
+#vimzmuhwcn .gt_indent_3 {
 text-indent: 15px;
 }
-#rscmwchmmt .gt_indent_4 {
+#vimzmuhwcn .gt_indent_4 {
 text-indent: 20px;
 }
-#rscmwchmmt .gt_indent_5 {
+#vimzmuhwcn .gt_indent_5 {
 text-indent: 25px;
 }
-#rscmwchmmt .katex-display {
+#vimzmuhwcn .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#rscmwchmmt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vimzmuhwcn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -4881,20 +4878,20 @@ Table 4: ANOVA compsrison of our Step Model against the Interaction Model.
 </figcaption>
 <div aria-describedby="tbl-ANOVA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ijofvaowvy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ijofvaowvy table {
+<div id="xeyyyfvfvi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xeyyyfvfvi table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#ijofvaowvy thead, #ijofvaowvy tbody, #ijofvaowvy tfoot, #ijofvaowvy tr, #ijofvaowvy td, #ijofvaowvy th {
+#xeyyyfvfvi thead, #xeyyyfvfvi tbody, #xeyyyfvfvi tfoot, #xeyyyfvfvi tr, #xeyyyfvfvi td, #xeyyyfvfvi th {
 border-style: none;
 }
-#ijofvaowvy p {
+#xeyyyfvfvi p {
 margin: 0;
 padding: 0;
 }
-#ijofvaowvy .gt_table {
+#xeyyyfvfvi .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -4919,11 +4916,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#ijofvaowvy .gt_caption {
+#xeyyyfvfvi .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#ijofvaowvy .gt_title {
+#xeyyyfvfvi .gt_title {
 color: #333333;
 font-size: 16px;
 font-weight: initial;
@@ -4934,7 +4931,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#ijofvaowvy .gt_subtitle {
+#xeyyyfvfvi .gt_subtitle {
 color: #333333;
 font-size: 14px;
 font-weight: initial;
@@ -4945,7 +4942,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#ijofvaowvy .gt_heading {
+#xeyyyfvfvi .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -4956,12 +4953,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ijofvaowvy .gt_bottom_border {
+#xeyyyfvfvi .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ijofvaowvy .gt_col_headings {
+#xeyyyfvfvi .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4975,7 +4972,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ijofvaowvy .gt_col_heading {
+#xeyyyfvfvi .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -4994,7 +4991,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#ijofvaowvy .gt_column_spanner_outer {
+#xeyyyfvfvi .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5005,13 +5002,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#ijofvaowvy .gt_column_spanner_outer:first-child {
+#xeyyyfvfvi .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#ijofvaowvy .gt_column_spanner_outer:last-child {
+#xeyyyfvfvi .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#ijofvaowvy .gt_column_spanner {
+#xeyyyfvfvi .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -5022,10 +5019,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#ijofvaowvy .gt_spanner_row {
+#xeyyyfvfvi .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#ijofvaowvy .gt_group_heading {
+#xeyyyfvfvi .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5050,7 +5047,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#ijofvaowvy .gt_empty_group_heading {
+#xeyyyfvfvi .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -5064,13 +5061,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#ijofvaowvy .gt_from_md > :first-child {
+#xeyyyfvfvi .gt_from_md > :first-child {
 margin-top: 0;
 }
-#ijofvaowvy .gt_from_md > :last-child {
+#xeyyyfvfvi .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#ijofvaowvy .gt_row {
+#xeyyyfvfvi .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5088,7 +5085,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#ijofvaowvy .gt_stub {
+#xeyyyfvfvi .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5100,7 +5097,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ijofvaowvy .gt_stub_row_group {
+#xeyyyfvfvi .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5113,13 +5110,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#ijofvaowvy .gt_row_group_first td {
+#xeyyyfvfvi .gt_row_group_first td {
 border-top-width: 2px;
 }
-#ijofvaowvy .gt_row_group_first th {
+#xeyyyfvfvi .gt_row_group_first th {
 border-top-width: 2px;
 }
-#ijofvaowvy .gt_summary_row {
+#xeyyyfvfvi .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5128,14 +5125,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ijofvaowvy .gt_first_summary_row {
+#xeyyyfvfvi .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#ijofvaowvy .gt_first_summary_row.thick {
+#xeyyyfvfvi .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#ijofvaowvy .gt_last_summary_row {
+#xeyyyfvfvi .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5144,7 +5141,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ijofvaowvy .gt_grand_summary_row {
+#xeyyyfvfvi .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5153,7 +5150,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ijofvaowvy .gt_first_grand_summary_row {
+#xeyyyfvfvi .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5162,7 +5159,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#ijofvaowvy .gt_last_grand_summary_row_top {
+#xeyyyfvfvi .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5171,10 +5168,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#ijofvaowvy .gt_striped {
+#xeyyyfvfvi .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#ijofvaowvy .gt_table_body {
+#xeyyyfvfvi .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5182,7 +5179,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ijofvaowvy .gt_footnotes {
+#xeyyyfvfvi .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5195,7 +5192,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ijofvaowvy .gt_footnote {
+#xeyyyfvfvi .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -5203,7 +5200,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ijofvaowvy .gt_sourcenotes {
+#xeyyyfvfvi .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5216,64 +5213,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ijofvaowvy .gt_sourcenote {
+#xeyyyfvfvi .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ijofvaowvy .gt_left {
+#xeyyyfvfvi .gt_left {
 text-align: left;
 }
-#ijofvaowvy .gt_center {
+#xeyyyfvfvi .gt_center {
 text-align: center;
 }
-#ijofvaowvy .gt_right {
+#xeyyyfvfvi .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#ijofvaowvy .gt_font_normal {
+#xeyyyfvfvi .gt_font_normal {
 font-weight: normal;
 }
-#ijofvaowvy .gt_font_bold {
+#xeyyyfvfvi .gt_font_bold {
 font-weight: bold;
 }
-#ijofvaowvy .gt_font_italic {
+#xeyyyfvfvi .gt_font_italic {
 font-style: italic;
 }
-#ijofvaowvy .gt_super {
+#xeyyyfvfvi .gt_super {
 font-size: 65%;
 }
-#ijofvaowvy .gt_footnote_marks {
+#xeyyyfvfvi .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#ijofvaowvy .gt_asterisk {
+#xeyyyfvfvi .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#ijofvaowvy .gt_indent_1 {
+#xeyyyfvfvi .gt_indent_1 {
 text-indent: 5px;
 }
-#ijofvaowvy .gt_indent_2 {
+#xeyyyfvfvi .gt_indent_2 {
 text-indent: 10px;
 }
-#ijofvaowvy .gt_indent_3 {
+#xeyyyfvfvi .gt_indent_3 {
 text-indent: 15px;
 }
-#ijofvaowvy .gt_indent_4 {
+#xeyyyfvfvi .gt_indent_4 {
 text-indent: 20px;
 }
-#ijofvaowvy .gt_indent_5 {
+#xeyyyfvfvi .gt_indent_5 {
 text-indent: 25px;
 }
-#ijofvaowvy .katex-display {
+#xeyyyfvfvi .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#ijofvaowvy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xeyyyfvfvi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -5829,375 +5826,369 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Obesity health concerns are a major issue in Scotland impacting the healthy well-being of individuals across the country. The **Body Mass Index (BMI)** is a measure to assess weight-related health issues and is used widely across the world to provide insight into the population&#39;s health. The Scottish Health Survey (2008-2012) demonstrates how social-economic and lifestyle factors may affect the BMI distribution of the Scottish Population. The survey (displayed in the <span class="in">`DAProject8`</span> dataset) uses factors such as <span class="in">`Age`</span>, <span class="in">`Sex`</span>, <span class="in">`Employment`</span> status, <span class="in">`Veg`</span> intake, <span class="in">`Fruit`</span> intake and more to understand the relationship between social-economic, lifestyle factors and health outcomes of the Scottish population. Here, we shall analyse these relationships and conclude whether there has been a difference in BMI distribution in Scotland over the given years.</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>@sec-exploratory consists of the **Exploratory Analysis** of the survey&#39;s data and explores the potential trends between social-economic and lifestyle factors and the BMI, and whether there are any differences in the BMI over the given years.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploratory Data Analysis {#sec-exploratory}</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>@sec-FA contains the results from fitting a **multiple regression model** to the data, as well as the assessment of the model assumptions.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>In this section , we will explore the distribution of BMI from our <span class="in">`DAProject8`</span> dataset.</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The concluding remarks will be given in @sec-conclusion.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Here, we **summarise BMI patterns** and **visualise distributions** to investigate changes over time and differences by another factor, in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploratory Data Analysis {#sec-exploratory}</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>In this section , we will explore the distribution of BMI from our <span class="in">`DAProject8`</span> dataset.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Here, we **summarise BMI patterns** and **visualise distributions** to investigate changes over time and differences by another factor, in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>DAProject8 <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">AgeGroup =</span> <span class="fu">as.factor</span>(AgeGroup),</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sex =</span> <span class="fu">as.factor</span>(Sex),</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">Employment =</span> <span class="fu">as.factor</span>(Employment),</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">Veg =</span> <span class="fu">as.factor</span>(Veg),</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fruit =</span> <span class="fu">as.factor</span>(Fruit),</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">as.factor</span>(Year)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary Statistics</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-summary depicts the **interquartile range**, **overall range** and **central tendency** of the BMI in the time frame.</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bmi-summary</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Overall Summary Statistics of BMI&quot;</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>bmi_summary <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="fu">min</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Q1&quot;</span> <span class="ot">=</span> <span class="fu">quantile</span>(BMI, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="fu">median</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Q3&quot;</span> <span class="ot">=</span> <span class="fu">quantile</span>(BMI, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="fu">max</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">Min =</span> <span class="st">&quot;Minimum&quot;</span>,</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="st">&quot;1st Quartile&quot;</span>,</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="st">&quot;Median&quot;</span>,</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="st">&quot;Mean&quot;</span>,</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="st">&quot;3rd Quartile&quot;</span>,</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">Max =</span> <span class="st">&quot;Maximum&quot;</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>bmi_summary</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and **sample size** over our time frame.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bmi-year</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Mean, Median, and Standard Deviation of BMI by Year&quot;</span></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>bmi_by_year <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Mean_BMI&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Median_BMI&quot;</span> <span class="ot">=</span> <span class="fu">median</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SD_BMI&quot;</span> <span class="ot">=</span> <span class="fu">sd</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;N&quot;</span> <span class="ot">=</span> <span class="fu">n</span>()</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean_BMI =</span> <span class="st">&quot;Mean&quot;</span>,</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median_BMI =</span> <span class="st">&quot;Median&quot;</span>,</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">SD_BMI =</span> <span class="st">&quot;Std. Dev&quot;</span>,</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">N =</span> <span class="st">&quot;Sample Size&quot;</span></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>bmi_by_year</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>DAProject8 <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">AgeGroup =</span> <span class="fu">as.factor</span>(AgeGroup),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sex =</span> <span class="fu">as.factor</span>(Sex),</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">Employment =</span> <span class="fu">as.factor</span>(Employment),</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">Veg =</span> <span class="fu">as.factor</span>(Veg),</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fruit =</span> <span class="fu">as.factor</span>(Fruit),</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">as.factor</span>(Year)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary Statistics</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-summary depicts the **interquartile range**, **overall range** and **central tendency** of the BMI in the time frame.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bmi-summary</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Overall Summary Statistics of BMI&quot;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>bmi_summary <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="fu">min</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Q1&quot;</span> <span class="ot">=</span> <span class="fu">quantile</span>(BMI, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="fu">median</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Q3&quot;</span> <span class="ot">=</span> <span class="fu">quantile</span>(BMI, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="fu">max</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">Min =</span> <span class="st">&quot;Minimum&quot;</span>,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="st">&quot;1st Quartile&quot;</span>,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="st">&quot;Median&quot;</span>,</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="st">&quot;Mean&quot;</span>,</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="st">&quot;3rd Quartile&quot;</span>,</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">Max =</span> <span class="st">&quot;Maximum&quot;</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>bmi_summary</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>@tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and **sample size** over our time frame.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-bmi-year</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Mean, Median, and Standard Deviation of BMI by Year&quot;</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>bmi_by_year <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Mean_BMI&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Median_BMI&quot;</span> <span class="ot">=</span> <span class="fu">median</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;SD_BMI&quot;</span> <span class="ot">=</span> <span class="fu">sd</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;N&quot;</span> <span class="ot">=</span> <span class="fu">n</span>()</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean_BMI =</span> <span class="st">&quot;Mean&quot;</span>,</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median_BMI =</span> <span class="st">&quot;Median&quot;</span>,</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">SD_BMI =</span> <span class="st">&quot;Std. Dev&quot;</span>,</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">N =</span> <span class="st">&quot;Sample Size&quot;</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>bmi_by_year</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Distribution and Normality</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>@fig-bmi-hist displays the **overall BMI distribution between 2008 and 2012**.</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Distribution and Normality</span></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>@fig-bmi-hist displays the **overall BMI distribution between 2008 and 2012**.</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-hist</span></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Histogram of BMI Distribution (2008-2012)&quot;</span></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>bmi_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> BMI)) <span class="sc">+</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue4&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of BMI in Scotland (2008-2012)&quot;</span>,</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>bmi_hist</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>@fig-bmi-qq assesses **normality** with a Q-Q plot.</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-qq</span></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Q-Q Plot of BMI for Normality Assessment&quot;</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-hist</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Histogram of BMI Distribution (2008-2012)&quot;</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>bmi_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> BMI)) <span class="sc">+</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue4&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of BMI in Scotland (2008-2012)&quot;</span>,</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>bmi_hist</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>@fig-bmi-qq assesses **normality** with a Q-Q plot.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-qq</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Q-Q Plot of BMI for Normality Assessment&quot;</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(DAProject8<span class="sc">$</span>BMI, <span class="at">main =</span> <span class="st">&quot;Q-Q Plot of BMI&quot;</span>)</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(DAProject8<span class="sc">$</span>BMI, <span class="at">col =</span> <span class="st">&quot;firebrick1&quot;</span>)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in @sec-FA.</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(DAProject8<span class="sc">$</span>BMI, <span class="at">main =</span> <span class="st">&quot;Q-Q Plot of BMI&quot;</span>)</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(DAProject8<span class="sc">$</span>BMI, <span class="at">col =</span> <span class="st">&quot;firebrick1&quot;</span>)</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Over Time</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>@fig-bmi-year shows our BMI distribution by <span class="in">`Year`</span>.</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in @sec-FA.</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## BMI Over Time</span></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>@fig-bmi-year shows our BMI distribution by <span class="in">`Year`</span>.</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-year</span></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Boxplot of BMI by Year&quot;</span></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>bmi_year_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> BMI, <span class="at">fill =</span> Year)) <span class="sc">+</span></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;2008&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightblue&quot;</span>, </span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2009&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgreen&quot;</span>, </span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2010&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightpink&quot;</span>, </span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2011&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightcoral&quot;</span>, </span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2012&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgoldenrodyellow&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;BMI Distribution by Year&quot;</span>,</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Year&quot;</span>)</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>bmi_year_box</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-year</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Boxplot of BMI by Year&quot;</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>bmi_year_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> BMI, <span class="at">fill =</span> Year)) <span class="sc">+</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;2008&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightblue&quot;</span>, </span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2009&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgreen&quot;</span>, </span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2010&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightpink&quot;</span>, </span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2011&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightcoral&quot;</span>, </span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;2012&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgoldenrodyellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;BMI Distribution by Year&quot;</span>,</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Year&quot;</span>)</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>bmi_year_box</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>As displayed in @fig-bmi-year, our distributions appear similar throughout, with some outliers above 50 appearing every year, indicating again, that there are no major change over 2008-2012.</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Differences Observed by Diet</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>@fig-bmi-diet facets BMI by <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake across years, which allows us to assess diet effects over time.</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>As displayed in @fig-bmi-year, our distributions appear similar throughout, with some outliers above 50 appearing every year, indicating again, that there are no major change over 2008-2012.</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Differences Observed by Diet</span></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>@fig-bmi-diet facets BMI by <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake across years, which allows us to assess diet effects over time.</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-diet</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Boxplot of BMI by Year and Diet&quot;</span></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>DAProject8 <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Veg_Fruit =</span> <span class="fu">interaction</span>(Veg, Fruit, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>))</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>bmi_diet_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> BMI, <span class="at">fill =</span> Veg_Fruit)) <span class="sc">+</span></span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Fruit <span class="sc">~</span> Veg) <span class="sc">+</span> </span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Yes/Yes&quot;</span> <span class="ot">=</span> <span class="st">&quot;green3&quot;</span>, </span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Yes/No&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgoldenrod1&quot;</span>, </span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;No/Yes&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightskyblue&quot;</span>, </span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;No/No&quot;</span> <span class="ot">=</span> <span class="st">&quot;firebrick3&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;BMI by Year, Vegetable, and Fruit Intake&quot;</span>,</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Veg/Fruit&quot;</span>)</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>bmi_diet_box</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bmi-diet</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: &quot;Boxplot of BMI by Year and Diet&quot;</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>DAProject8 <span class="ot">&lt;-</span> DAProject8 <span class="sc">%&gt;%</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Veg_Fruit =</span> <span class="fu">interaction</span>(Veg, Fruit, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>))</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>bmi_diet_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DAProject8, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> BMI, <span class="at">fill =</span> Veg_Fruit)) <span class="sc">+</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Fruit <span class="sc">~</span> Veg) <span class="sc">+</span> </span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Yes/Yes&quot;</span> <span class="ot">=</span> <span class="st">&quot;green3&quot;</span>, </span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Yes/No&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightgoldenrod1&quot;</span>, </span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;No/Yes&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightskyblue&quot;</span>, </span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;No/No&quot;</span> <span class="ot">=</span> <span class="st">&quot;firebrick3&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;BMI by Year, Vegetable, and Fruit Intake&quot;</span>,</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;BMI&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Veg/Fruit&quot;</span>)</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>bmi_diet_box</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>As can be observed in @fig-bmi-diet, the BMI distributions remain similar when <span class="in">`Veg`</span> intake is or is not present, no matter what the <span class="in">`Fruit`</span> intake is. We can see that there is potentially a slightly higher BMI associated with both <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="fu"># Formal Analysis {#sec-FA}</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>We start by fitting the **full multiple regression model** containing **all** explanatory variables. The full model can be written as:</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>As can be observed in @fig-bmi-diet, the BMI distributions remain similar when <span class="in">`Veg`</span> intake is or is not present, no matter what the <span class="in">`Fruit`</span> intake is. We can see that there is potentially a slightly higher BMI associated with both <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="fu"># Formal Analysis {#sec-FA}</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>We start by fitting the **full multiple regression model** containing **all** explanatory variables. The full model can be written as:</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>$$ \begin{align}</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>y_{i} &amp;= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \\ &amp;  \quad \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, <span class="sc">\\</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>&amp; ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n <span class="sc">\\</span></span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>\end{align}$$</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>$$ \begin{align}</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>y_{i} &amp;= \alpha + \beta_{AgeGroup} \cdot \mathbb{I}_{AgeGroup}(x) + \beta_{Sex} \cdot \mathbb{I}_{Sex}(x) + \beta_{Employment} \cdot \mathbb{I}_{Employment}(x) + \\ &amp;  \quad \beta_{Veg}\cdot \mathbb{I}_{Veg}(x)+ \beta_{Fruit} \cdot \mathbb{I}_{Fruit}(x) + \beta_{Year} \cdot \mathbb{I}_{Year}(x) + \epsilon_i, <span class="sc">\\</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>&amp; ~~~~ \epsilon_i \sim N(0, \sigma^2), ~~~~ i=1,\ldots,n <span class="sc">\\</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>\end{align}$$</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>where:</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\alpha$ is the intercept of the regression line for the baseline of <span class="in">`Fruit`</span> and <span class="in">`Veg`</span> being &#39;no&#39;.</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{AgeGroup}$ is the intercept of the regression line for the specified <span class="in">`Age`</span> group.</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>where:</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\alpha$ is the intercept of the regression line for the baseline of <span class="in">`Fruit`</span> and <span class="in">`Veg`</span> being &#39;no&#39;.</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{AgeGroup}$ is the intercept of the regression line for the specified <span class="in">`Age`</span> group.</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Sex}$ is the intercept of the regression line for the specified <span class="in">`Sex`</span>.</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Sex}(x) = \begin{cases} 1&amp;\mbox{for male} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{AgeGroup}(x)$ is an indicator function indicating the <span class="in">`Age`</span> group.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Employment}$ is the intercept of the regression line for the specified <span class="in">`Employment`</span> status.</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Sex}$ is the intercept of the regression line for the specified <span class="in">`Sex`</span>.</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Employment}(x)$ is an indicator function indicating the <span class="in">`Employment`</span> status.</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Sex}(x) = \begin{cases} 1&amp;\mbox{for male} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Veg}$ is the intercept of the regression line for the specified <span class="in">`Veg`</span> intake.</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Employment}$ is the intercept of the regression line for the specified <span class="in">`Employment`</span> status.</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Veg}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Employment}(x)$ is an indicator function indicating the <span class="in">`Employment`</span> status.</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Fruit}$ is the intercept of the regression line for the specified <span class="in">`Fruit`</span> intake.</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Veg}$ is the intercept of the regression line for the specified <span class="in">`Veg`</span> intake.</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Fruit}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Veg}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Year}$ is the intercept of the regression line for the <span class="in">`Year`</span>.</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Fruit}$ is the intercept of the regression line for the specified <span class="in">`Fruit`</span> intake.</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Year}(x)$ is an indicator function indicating the <span class="in">`Year`</span>.</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Fruit}(x) = \begin{cases} 1&amp;\mbox{for yes} <span class="sc">\\</span> 0&amp;otherwise \end{cases}$</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\epsilon_i$ represents normally distributed errors.</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\beta_{Year}$ is the intercept of the regression line for the <span class="in">`Year`</span>.</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stepwise Regression</span></span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\mathbb{I}_{Year}(x)$ is an indicator function indicating the <span class="in">`Year`</span>.</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model.</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\epsilon_i$ represents normally distributed errors.</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stepwise Regression</span></span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model.</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="co">#regression model</span></span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>bmi_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> AgeGroup <span class="sc">+</span> Sex <span class="sc">+</span> Employment <span class="sc">+</span> Veg <span class="sc">+</span> Fruit <span class="sc">+</span> Year, <span class="at">data =</span> DAProject8) </span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>bmi_model</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="co">#Stepwise selection using backward elimination</span></span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>step_model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(bmi_model, <span class="at">direction =</span> <span class="st">&quot;backward&quot;</span>, <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>AIC <span class="ot">&lt;-</span> step_model<span class="sc">$</span>anova</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>The final regression model results are summarised in @tbl-regtable. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-regtable</span></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Estimates of the regression model coeeficients</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="co">#regression model</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>bmi_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> AgeGroup <span class="sc">+</span> Sex <span class="sc">+</span> Employment <span class="sc">+</span> Veg <span class="sc">+</span> Fruit <span class="sc">+</span> Year, <span class="at">data =</span> DAProject8) </span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>bmi_model</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="co">#Stepwise selection using backward elimination</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>step_model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(bmi_model, <span class="at">direction =</span> <span class="st">&quot;backward&quot;</span>, <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>AIC <span class="ot">&lt;-</span> step_model<span class="sc">$</span>anova</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>The final regression model results are summarised in @tbl-regtable. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-regtable</span></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Estimates of the regression model coeeficients</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="co"># Display final selected model coefficients</span></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">get_regression_table</span>(step_model)) <span class="sc">|&gt;</span> <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">3</span>)</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>As displayed in @tbl-regtable, BMI increases with <span class="in">`Age`</span>, with all age groups showing statistically significant positive estimates compared to the reference group (<span class="in">`18-24`</span>). The largest increase peaks in the <span class="in">`55-64`</span> age group in BMI and then decreases in the <span class="in">`75+`</span> group.</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="co"># Display final selected model coefficients</span></span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">get_regression_table</span>(step_model)) <span class="sc">|&gt;</span> <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">3</span>)</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>With respect to <span class="in">`Employment`</span> status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both <span class="in">`Looking after home/family`</span> and <span class="in">`Looking for/intending to look for paid work`</span> are not statistically significant in influencing BMI.</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>Also, with respect to lifestyle factors, meeting the recommended <span class="in">`Veg`</span> consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.</span>
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>As displayed in @tbl-regtable, BMI increases with <span class="in">`Age`</span>, with all age groups showing statistically significant positive estimates compared to the reference group (<span class="in">`18-24`</span>). The largest increase peaks in the <span class="in">`55-64`</span> age group in BMI and then decreases in the <span class="in">`75+`</span> group.</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Assumptions</span></span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>With respect to <span class="in">`Employment`</span> status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both <span class="in">`Looking after home/family`</span> and <span class="in">`Looking for/intending to look for paid work`</span> are not statistically significant in influencing BMI.</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>To ensure that regression assumptions hold, we analyse residuals depicted in @fig-residassump below.</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>Also, with respect to lifestyle factors, meeting the recommended <span class="in">`Veg`</span> consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Assumptions</span></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>To ensure that regression assumptions hold, we analyse residuals depicted in @fig-residassump below.</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-residassump</span></span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: &quot;Residual Diagnostic Plots for Stepwise Model&quot;</span></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 10</span></span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))</span></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="in">plot(step_model)</span></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(1, 1))</span></span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which appear satisfied in this case.</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>To confirm the validity of model assumptions, we visualise the **normality of the residuals** in @fig-normalresid below.</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-residassump</span></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: &quot;Residual Diagnostic Plots for Stepwise Model&quot;</span></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="in">plot(step_model)</span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(1, 1))</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>The residual plots help check for **normality**, **homoscedasticity**, and **potential outliers**, all of which appear satisfied in this case.</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>To confirm the validity of model assumptions, we visualise the **normality of the residuals** in @fig-normalresid below.</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-normalresid</span></span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-normalresid</span></span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot residuals</span></span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">residuals =</span> <span class="fu">residuals</span>(step_model)), <span class="fu">aes</span>(<span class="at">x =</span> residuals)) <span class="sc">+</span></span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Residuals&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Residuals&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot residuals</span></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">residuals =</span> <span class="fu">residuals</span>(step_model)), <span class="fu">aes</span>(<span class="at">x =</span> residuals)) <span class="sc">+</span></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Residuals&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Residuals&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centered at zero.</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interaction Effects</span></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>We test for interactions between <span class="in">`Sex`</span> and <span class="in">`Employment`</span>, and <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake to explore whether dietary factors interact with employment status or gender.</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>@fig-normalresid verifies that the residuals are approximately normally distributed as it is bell-shaped and centered at zero.</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interaction Effects</span></span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>We test for interactions between <span class="in">`Sex`</span> and <span class="in">`Employment`</span>, and <span class="in">`Veg`</span> and <span class="in">`Fruit`</span> intake to explore whether dietary factors interact with employment status or gender.</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>interaction_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> AgeGroup <span class="sc">*</span> Sex <span class="sc">+</span> Employment <span class="sc">*</span> Veg <span class="sc">+</span> Fruit <span class="sc">+</span> Year, <span class="at">data =</span> DAProject8)</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">anova</span>(step_model, interaction_model)</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-ANOVA</span></span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: ANOVA compsrison of our Step Model against the Interaction Model.</span></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>anova_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(anova_result)</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>anova_df <span class="sc">%&gt;%</span></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;ANOVA Comparison of Models&quot;</span>,</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Step Model vs. Interaction Model&quot;</span></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Res.Df</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;Residual DF&quot;</span>,</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSS =</span> <span class="st">&quot;Residual Sum of Squares&quot;</span>,</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">Df =</span> <span class="st">&quot;Degrees of Freedom&quot;</span>,</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sum of Sq</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;Sum of Squares&quot;</span>,</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>    <span class="at">F =</span> <span class="st">&quot;F Statistic&quot;</span>,</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;p-value&quot;</span></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(RSS, <span class="st">`</span><span class="at">Sum of Sq</span><span class="st">`</span>, F),</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>,</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">4</span></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="dv">12</span>,</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="dv">16</span>,</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="dv">14</span></span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>interaction_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> AgeGroup <span class="sc">*</span> Sex <span class="sc">+</span> Employment <span class="sc">*</span> Veg <span class="sc">+</span> Fruit <span class="sc">+</span> Year, <span class="at">data =</span> DAProject8)</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">anova</span>(step_model, interaction_model)</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-ANOVA</span></span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: ANOVA compsrison of our Step Model against the Interaction Model.</span></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>anova_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(anova_result)</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>anova_df <span class="sc">%&gt;%</span></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;ANOVA Comparison of Models&quot;</span>,</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Step Model vs. Interaction Model&quot;</span></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Res.Df</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;Residual DF&quot;</span>,</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSS =</span> <span class="st">&quot;Residual Sum of Squares&quot;</span>,</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    <span class="at">Df =</span> <span class="st">&quot;Degrees of Freedom&quot;</span>,</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sum of Sq</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;Sum of Squares&quot;</span>,</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    <span class="at">F =</span> <span class="st">&quot;F Statistic&quot;</span>,</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;p-value&quot;</span></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(RSS, <span class="st">`</span><span class="at">Sum of Sq</span><span class="st">`</span>, F),</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>,</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">4</span></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="dv">12</span>,</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="dv">16</span>,</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="dv">14</span></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>The **ANOVA test** assesses whether including interaction terms significantly improves our model fit.</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>As we can see in @tbl-ANOVA, the model which included the interaction terms **did**, in fact, exhibit a significant improvement on our model fit (as can be seen with our p-value being <span class="sc">\&lt;</span>0.05).</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>@sec-conclusion will provide concluding remarks based on these findings.</span>
 <span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>The **ANOVA test** assesses whether including interaction terms significantly improves our model fit.</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions {#sec-conclusion}</span></span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>As we can see in @tbl-ANOVA, the model which included the interaction terms **did**, in fact, exhibit a significant improvement on our model fit (as can be seen with our p-value being <span class="sc">\&lt;</span>0.05).</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes. Thus, **time did not have a significant impact on BMI**.</span>
 <span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>@sec-conclusion will provide concluding remarks based on these findings.</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. We can see that BMI significantly **increases** as `Age` increases generally; and the `55-64` age range generally saw the largest increase. Further, with regards to `Employment`, we can say that if you are actively in work your BMI generally **decreases**. In addition, those who are not currently in employment have a higher BMI distribution.</span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions {#sec-conclusion}</span></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of <span class="in">`Veg`</span>, showed a significant **decrease** on BMI.</span>
 <span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes. Thus, **time did not have a significant impact on BMI**.</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. We can see that BMI significantly **increases** as `Age` increases generally; and the `55-64` age range generally saw the largest increase. Further, with regards to `Employment`, we can say that if you are actively in work your BMI generally **decreases**. In addition, those who are not currently in employment have a higher BMI distribution.</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of <span class="in">`Veg`</span>, showed a significant **decrease** on BMI.</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>Hence, **lifestyle and social-economic factors do have a significant effect on the BMI distribution.**</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>Hence, **lifestyle and social-economic factors do have a significant effect on the BMI distribution.**</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
