@@ -23,8 +23,6 @@ Obesity health concerns are a major issue in Scotland impacting the healthy well
 
 # Exploratory Data Analysis {#sec-exploratory}
 
-In this section , we will explore the distribution of BMI from our `DAProject8` dataset.
-
 Here, we **summarise BMI patterns** and **visualise distributions** to investigate changes over time and differences by another factor, in diet (specifically `Fruit` and `Veg` intake). This will allow us to inform our Formal Analysis in @sec-FA, by checking **normality** and **variance assumptions**.
 
 ```{r}
@@ -110,43 +108,6 @@ bmi_by_year
 
 As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.
 
-## BMI Distribution and Normality
-
-@fig-bmi-hist displays the **overall BMI distribution between 2008 and 2012**.
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: fig-bmi-hist
-#| fig-cap: "Histogram of BMI Distribution (2008-2012)"
-#| fig-width: 3
-#| fig-height: 2
-
-bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
-  geom_histogram(binwidth = 2, fill = "dodgerblue4", color = "white") +
-  labs(title = "Distribution of BMI in Scotland (2008-2012)",
-       x = "BMI", y = "Count")
-bmi_hist
-```
-
-As we can see in @fig-bmi-hist, the distribution appears slightly right-skewed, suggesting potential non-normality. A peak is observed near 25--28 BMI score.
-
-@fig-bmi-qq assesses **normality** with a Q-Q plot.
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: fig-bmi-qq
-#| fig-cap: "Q-Q Plot of BMI for Normality Assessment"
-#| fig-width: 3
-#| fig-height: 3
-
-qqnorm(DAProject8$BMI, main = "Q-Q Plot of BMI")
-qqline(DAProject8$BMI, col = "firebrick1")
-```
-
-In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confirms skewness, suggesting a transformation (such as a log-transform) might be needed for our analysis in @sec-FA.
-
 ## BMI Over Time
 
 @fig-bmi-year shows our BMI distribution by `Year`.
@@ -156,8 +117,8 @@ In @fig-bmi-qq, deviation at the tails - particularly at the upper tail - confir
 #| eval: true
 #| label: fig-bmi-year
 #| fig-cap: "Boxplot of BMI by Year"
-#| fig-width: 4
-#| fig-height: 2
+#| fig-width: 3
+#| fig-height: 1.5
 
 bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Year)) +
   geom_boxplot() +
@@ -182,8 +143,8 @@ As displayed in @fig-bmi-year, our distributions appear similar throughout, with
 #| eval: true
 #| label: fig-bmi-diet
 #| fig-cap: "Boxplot of BMI by Year and Diet"
-#| fig-width: 4
-#| fig-height: 3
+#| fig-width: 3.5
+#| fig-height: 2.75
 
 DAProject8 <- DAProject8 %>%
   mutate(Veg_Fruit = interaction(Veg, Fruit, sep = "/"))
@@ -245,7 +206,7 @@ where:
 
 ## Stepwise Regression
 
-To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model.
+To refine the model, since there are so many variables, we apply **stepwise regression** with **backward selection** in order to reduce the model based on the **Akaike Information Criterion (AIC)**. In doing this, we aim to identify the best-fitting model. The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.
 
 ```{r}
 #| warning: false
@@ -269,8 +230,6 @@ step_model <- stepAIC(bmi_model, direction = "backward", trace = FALSE)
 AIC <- step_model$anova
 ```
 
-The stepwise selection process determines whether all predictors should be included or if a reduced model provides a better fit. In this case, the final model has the lowest AIC of 82517.56 and thus, is the chosen model.
-
 The final regression model results are summarised in @tbl-regtable. This provides estimates of the regression model coefficients, showing which factors significantly impact BMI.
 
 ```{r}
@@ -288,9 +247,7 @@ gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
 
 As displayed in @tbl-regtable, BMI increases with `Age`, with all age groups showing statistically significant positive estimates compared to the reference group (`18-24`). The largest increase peaks in the `55-64` age group in BMI and then decreases in the `75+` group.
 
-With respect to `Employment` status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI.
-
-Also, with respect to lifestyle factors, meeting the recommended `Veg` consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.
+With respect to `Employment` status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI. Also, with respect to lifestyle factors, meeting the recommended `Veg` consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.
 
 ## Model Assumptions
 
@@ -315,7 +272,7 @@ To confirm the validity of model assumptions, we visualise the **normality of th
 ```{r}
 #| echo: false
 #| label: fig-normalresid
-#| fig-width: 3
+#| fig-width: 4
 #| fig-height: 2
 
 # Plot residuals
@@ -348,7 +305,7 @@ anova_result <- anova(step_model, interaction_model)
 ```{r}
 #| echo: false
 #| label: tbl-ANOVA
-#| tbl-cap: ANOVA compsrison of our Step Model against the Interaction Model.
+#| tbl-cap: ANOVA comparison of our Step Model against the Interaction Model.
 
 anova_df <- as.data.frame(anova_result)
 
@@ -385,14 +342,12 @@ The **ANOVA test** assesses whether including interaction terms significantly im
 
 As we can see in @tbl-ANOVA, the model which included the interaction terms **did**, in fact, exhibit a significant improvement on our model fit (as can be seen with our p-value being \<0.05).
 
-@sec-conclusion will provide concluding remarks based on these findings.
-
 # Conclusions {#sec-conclusion}
 
 As we can see from @tbl-bmi-year and @fig-bmi-year the BMI remained somewhat stable between years 2008-2012, with no significant yearly changes. Thus, **time did not have a significant impact on BMI**.
 
-However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. We can see that BMI significantly **increases** as `Age` increases generally; and the `55-64` age range generally saw the largest increase. Further, with regards to `Employment`, we can say that if you are actively in work your BMI generally **decreases**. In addition, those who are not currently in employment have a higher BMI distribution.
-
-When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of `Veg`, showed a significant **decrease** on BMI.
+However, in @sec-FA, we found that several lifestyle and demographic factors do, indeed, influence BMI. We can see that BMI significantly **increases** as `Age` increases generally; and the `55-64` age range generally saw the largest increase. Further, with regards to `Employment`, we can say that if you are actively in work your BMI generally **decreases**. In addition, those who are not currently in employment have a higher BMI distribution. When it comes to lifestyle choices, our analysis suggests that consuming the recommended amount of `Veg`, showed a significant **decrease** on BMI.
 
 Hence, **lifestyle and social-economic factors do have a significant effect on the BMI distribution.**
+
+As over a decade has passed since the survey in which our findings relate to, our conclusions may be subject to change; due to an increase in promotion of good health and BMI awareness in society. Hence, a new survey may provide a better reflection of the current state of affairs with regards to BMI in the Scottish population.
