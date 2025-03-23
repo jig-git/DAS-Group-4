@@ -282,14 +282,29 @@ The final regression model results are summarised in @tbl-regtable. This provide
 ```{r}
 #| echo: false
 #| label: tbl-regtable
-#| tbl-cap: Estimates of the regression model coeeficients
-#| fig-width: 4
-#| fig-height: 2
+#| tbl-cap: "Estimates of the Regression Model Coefficients"
 
 library(moderndive)
 
-# Display final selected model coefficients
-gt(get_regression_table(step_model)) |> fmt_number(decimals = 3)
+gt(get_regression_table(step_model)) %>%
+  fmt_number(decimals = 3) %>%
+  cols_width(
+    term ~ px(80),
+    estimate ~ px(50),
+    std_error ~ px(50),
+    statistic ~ px(50),
+    p_value ~ px(50),
+    lower_ci ~ px(50),
+    upper_ci ~ px(50)
+  ) %>%
+  tab_options(
+    table.font.size = 9,
+    heading.title.font.size = 12,
+    heading.subtitle.font.size = 10,
+    table.width = pct(70),
+    column_labels.padding = px(2),
+    data_row.padding = px(2)
+  )
 ```
 
 As displayed in @tbl-regtable, BMI increases with `Age`, with all age groups showing statistically significant positive estimates compared to the reference group (`18-24`). The largest increase peaks in the `55-64` age group in BMI and then decreases in the `75+` group.
@@ -354,10 +369,7 @@ anova_result <- anova(step_model, interaction_model)
 #| label: tbl-ANOVA
 #| tbl-cap: "ANOVA Comparison of Stepwise and Interaction Models"
 
-library(dplyr)  # Added to ensure select() and everything() are available
-anova_df <- as.data.frame(anova_result) %>%
-  mutate(Model = c("Stepwise", "Interaction")) %>%
-  select(Model, everything())  # Reordering: Model first, then all other columns
+anova_df <- as.data.frame(anova_result)
 
 anova_df %>%
   gt() %>%
@@ -366,7 +378,6 @@ anova_df %>%
     subtitle = "Stepwise vs. Interaction Model"
   ) %>%
   cols_label(
-    Model = "Model",
     `Res.Df` = "Residual DF",
     RSS = "Residual Sum of Squares",
     Df = "Degrees of Freedom",
@@ -382,10 +393,21 @@ anova_df %>%
     columns = `Pr(>F)`,
     decimals = 4
   ) %>%
+  cols_width(
+    `Res.Df` ~ px(50),
+    RSS ~ px(70),
+    Df ~ px(50),
+    `Sum of Sq` ~ px(70),
+    F ~ px(60),
+    `Pr(>F)` ~ px(50)
+  ) %>%
   tab_options(
-    table.font.size = 12,
-    heading.title.font.size = 16,
-    heading.subtitle.font.size = 14
+    table.font.size = 9,
+    heading.title.font.size = 12,
+    heading.subtitle.font.size = 10,
+    table.width = pct(80),
+    column_labels.padding = px(2),
+    data_row.padding = px(2)
   )
 ```
 
