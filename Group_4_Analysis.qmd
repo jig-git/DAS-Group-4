@@ -1,5 +1,5 @@
 ---
-title: "AN In-Depth Look at BMI in Scotland from 2008-2012"
+title: "An In-Depth Insight into BMI in Scotland from 2008-2012"
 author: "2772011M, 2840466A, 2782951G, 2662654J"
 number-sections: true
 format: 
@@ -75,20 +75,20 @@ bmi_summary <- DAProject8 %>%
     Max = "Maximum"
   ) %>%
   cols_width(
-    everything() ~ px(60)  # Narrow fixed width for all columns (60 pixels)
+    everything() ~ px(80)  
   ) %>%
   tab_options(
-    table.font.size = 9,            # Further reduced from 10
-    heading.title.font.size = 12,   # Reduced from 14
-    heading.subtitle.font.size = 10, # Reduced from 12
-    table.width = pct(80),          # Kept at 80% page width
-    column_labels.padding = px(2),  # Tighten column label padding
-    data_row.padding = px(2)        # Tighten row padding
+    table.font.size = 12,           
+    heading.title.font.size = 16,   
+    heading.subtitle.font.size = 14, 
+    table.width = pct(90),          
+    column_labels.padding = px(4),  
+    data_row.padding = px(4)        
   )
 bmi_summary
 ```
 
-From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data.
+From @tbl-bmi-summary, we can see that the interquartile range is significantly narrower than the overall range from the minimum to maximum values observed, suggesting that there may be potential outliers present in the data - especially at the towards the maximum observed value.
 
 @tbl-bmi-year tracks changes in the **mean**, **median**, **standard deviation**, and **sample size** over our time frame.
 
@@ -115,26 +115,26 @@ bmi_by_year <- DAProject8 %>%
     N = "Sample Size"
   ) %>%
   cols_width(
-    Year ~ px(50),          # Narrower for Year (text)
-    Mean_BMI ~ px(60),      # Consistent width for numeric columns
-    Median_BMI ~ px(60),
-    SD_BMI ~ px(60),
-    N ~ px(60)
+    Year ~ px(70),        
+    Mean_BMI ~ px(80),  
+    Median_BMI ~ px(80),
+    SD_BMI ~ px(80),
+    N ~ px(80)
   ) %>%
   tab_options(
-    table.font.size = 9,
-    heading.title.font.size = 12,
-    heading.subtitle.font.size = 10,
-    table.width = pct(80),
-    column_labels.padding = px(2),
-    data_row.padding = px(2)
+    table.font.size = 12,
+    heading.title.font.size = 16,
+    heading.subtitle.font.size = 14,
+    table.width = pct(90),
+    column_labels.padding = px(4),
+    data_row.padding = px(4)
   )
 bmi_by_year
 ```
 
 As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.
 
-## BMI Normality Insight
+## Assessing Normality
 
 Figure @fig-bmi-hist displays the overall BMI distribution.
 
@@ -143,7 +143,7 @@ Figure @fig-bmi-hist displays the overall BMI distribution.
 #| eval: true
 #| label: fig-bmi-hist
 #| fig-cap: "Histogram of BMI Distribution (2008-2012)"
-#| fig-width: 2.75
+#| fig-width: 2.5
 #| fig-height: 1.75
 
 bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
@@ -153,7 +153,7 @@ bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
 bmi_hist
 ```
 
-As we can see, our distribution appears to be slightly right-skewed, suggesting the existence of potential non-normality in our data.
+Our distribution appears to be reasonably bell-shaped though slightly right-skewed, suggesting the presence of potential non-normality brought about by outliers found at higher BMI values.
 
 ## BMI Over Time
 
@@ -165,7 +165,7 @@ As we can see, our distribution appears to be slightly right-skewed, suggesting 
 #| label: fig-bmi-year
 #| fig-cap: "Boxplot of BMI by Year"
 #| fig-width: 3
-#| fig-height: 1.5
+#| fig-height: 2
 
 bmi_year_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Year)) +
   geom_boxplot() +
@@ -190,8 +190,8 @@ As displayed in @fig-bmi-year, our distributions appear similar throughout, with
 #| eval: true
 #| label: fig-bmi-diet
 #| fig-cap: "Boxplot of BMI by Year and Diet"
-#| fig-width: 3.5
-#| fig-height: 2.75
+#| fig-width: 3.75
+#| fig-height: 3
 
 DAProject8 <- DAProject8 %>%
   mutate(Veg_Fruit = interaction(Veg, Fruit, sep = "/"))
@@ -289,27 +289,27 @@ library(moderndive)
 gt(get_regression_table(step_model)) %>%
   fmt_number(decimals = 3) %>%
   cols_width(
-    term ~ px(80),
-    estimate ~ px(50),
-    std_error ~ px(50),
-    statistic ~ px(50),
-    p_value ~ px(50),
-    lower_ci ~ px(50),
-    upper_ci ~ px(50)
+    term ~ px(100), 
+    estimate ~ px(70),
+    std_error ~ px(70),
+    statistic ~ px(70),
+    p_value ~ px(70),
+    lower_ci ~ px(70),
+    upper_ci ~ px(70)
   ) %>%
   tab_options(
-    table.font.size = 9,
-    heading.title.font.size = 12,
-    heading.subtitle.font.size = 10,
-    table.width = pct(70),
-    column_labels.padding = px(2),
-    data_row.padding = px(2)
+    table.font.size = 12,
+    heading.title.font.size = 16,
+    heading.subtitle.font.size = 14,
+    table.width = pct(90),
+    column_labels.padding = px(4),
+    data_row.padding = px(4)
   )
 ```
 
 As displayed in @tbl-regtable, BMI increases with `Age`, with all age groups showing statistically significant positive estimates compared to the reference group (`18-24`). The largest increase peaks in the `55-64` age group in BMI and then decreases in the `75+` group.
 
-With respect to `Employment` status, the overall trend suggests that when you are in full-time education, your BMI tends to be lower than if you are permanently unable to work - which is illustrated to result an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI. Also, with respect to lifestyle factors, meeting the recommended `Veg` consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.
+With respect to `Employment` status, the overall trend suggests that for those who are in full-time education, BMI tends to be lower than those who are permanently unable to work - which is illustrated to result in an increase in 1.178 in BMI on average. Both `Looking after home/family` and `Looking for/intending to look for paid work` are not statistically significant in influencing BMI. Also, with respect to lifestyle factors, meeting the recommended `Veg` consumption significantly decreases the BMI - which emphasises the importance of eating vegetables in weight management.
 
 ## Model Assumptions
 
@@ -334,10 +334,9 @@ To confirm the validity of model assumptions, we visualise the **normality of th
 ```{r}
 #| echo: false
 #| label: fig-normalresid
-#| fig-width: 2.75
+#| fig-width: 2.5
 #| fig-height: 1.75
 
-# Plot residuals
 library(ggplot2)
 ggplot(data = data.frame(residuals = residuals(step_model)), aes(x = residuals)) +
   geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
@@ -394,20 +393,20 @@ anova_df %>%
     decimals = 4
   ) %>%
   cols_width(
-    `Res.Df` ~ px(50),
-    RSS ~ px(70),
-    Df ~ px(50),
-    `Sum of Sq` ~ px(70),
-    F ~ px(60),
-    `Pr(>F)` ~ px(50)
+    `Res.Df` ~ px(70),    
+    RSS ~ px(100),         
+    Df ~ px(70),
+    `Sum of Sq` ~ px(100),
+    F ~ px(80),       
+    `Pr(>F)` ~ px(70)
   ) %>%
   tab_options(
-    table.font.size = 9,
-    heading.title.font.size = 12,
-    heading.subtitle.font.size = 10,
-    table.width = pct(80),
-    column_labels.padding = px(2),
-    data_row.padding = px(2)
+    table.font.size = 12,
+    heading.title.font.size = 16,
+    heading.subtitle.font.size = 14,
+    table.width = pct(90),
+    column_labels.padding = px(4),
+    data_row.padding = px(4)
   )
 ```
 
