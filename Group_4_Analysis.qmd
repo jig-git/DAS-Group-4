@@ -1,5 +1,5 @@
 ---
-title: "BMI Distribution in Scotland from 2008-2012"
+title: "AN In-Depth Look at BMI in Scotland from 2008-2012"
 author: "2772011M, 2840466A, 2782951G, 2662654J"
 number-sections: true
 format: 
@@ -73,6 +73,17 @@ bmi_summary <- DAProject8 %>%
     Mean = "Mean",
     Q3 = "3rd Quartile",
     Max = "Maximum"
+  ) %>%
+  cols_width(
+    everything() ~ px(60)  # Narrow fixed width for all columns (60 pixels)
+  ) %>%
+  tab_options(
+    table.font.size = 9,            # Further reduced from 10
+    heading.title.font.size = 12,   # Reduced from 14
+    heading.subtitle.font.size = 10, # Reduced from 12
+    table.width = pct(80),          # Kept at 80% page width
+    column_labels.padding = px(2),  # Tighten column label padding
+    data_row.padding = px(2)        # Tighten row padding
   )
 bmi_summary
 ```
@@ -102,11 +113,47 @@ bmi_by_year <- DAProject8 %>%
     Median_BMI = "Median",
     SD_BMI = "Std. Dev",
     N = "Sample Size"
+  ) %>%
+  cols_width(
+    Year ~ px(50),          # Narrower for Year (text)
+    Mean_BMI ~ px(60),      # Consistent width for numeric columns
+    Median_BMI ~ px(60),
+    SD_BMI ~ px(60),
+    N ~ px(60)
+  ) %>%
+  tab_options(
+    table.font.size = 9,
+    heading.title.font.size = 12,
+    heading.subtitle.font.size = 10,
+    table.width = pct(80),
+    column_labels.padding = px(2),
+    data_row.padding = px(2)
   )
 bmi_by_year
 ```
 
 As we can see, @tbl-bmi-year shows that both the mean and median BMI remains between 27 and 28 across 2008-2012. Similarly, standard deviations remain approximately constant, indicating no clear trend over time but consistent variability.
+
+## BMI Normality Insight
+
+Figure @fig-bmi-hist displays the overall BMI distribution.
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-bmi-hist
+#| fig-cap: "Histogram of BMI Distribution (2008-2012)"
+#| fig-width: 2.75
+#| fig-height: 1.75
+
+bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
+  geom_histogram(binwidth = 2, fill = "dodgerblue4", color = "white") +
+  labs(title = "Distribution of BMI in Scotland (2008-2012)",
+       x = "BMI", y = "Count")
+bmi_hist
+```
+
+As we can see, our distribution appears to be slightly right-skewed, suggesting the existence of potential non-normality in our data.
 
 ## BMI Over Time
 
@@ -161,7 +208,7 @@ bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
 bmi_diet_box
 ```
 
-As can be observed in @fig-bmi-diet, the BMI distributions remain similar when `Veg` intake is or is not present, no matter what the `Fruit` intake is. We can see that there is potentially a slightly higher BMI associated with both `Veg` and `Fruit` being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet.
+As can be observed in @fig-bmi-diet, the BMI distributions remain similar when `Veg` intake is or is not present, no matter what the `Fruit` intake is. We can see that there is potentially a slightly higher BMI associated with both `Veg` and `Fruit` being present in the diet, as the maximum values are generally slightly higher compared to our other combinations of diet; however, we can note that most of the data under this combination is still found within a similar region to the other `Veg`/`Fruit` intake combinations.
 
 # Formal Analysis {#sec-FA}
 
@@ -272,8 +319,8 @@ To confirm the validity of model assumptions, we visualise the **normality of th
 ```{r}
 #| echo: false
 #| label: fig-normalresid
-#| fig-width: 4
-#| fig-height: 2
+#| fig-width: 2.75
+#| fig-height: 1.75
 
 # Plot residuals
 library(ggplot2)
@@ -305,17 +352,21 @@ anova_result <- anova(step_model, interaction_model)
 ```{r}
 #| echo: false
 #| label: tbl-ANOVA
-#| tbl-cap: ANOVA comparison of our Step Model against the Interaction Model.
+#| tbl-cap: "ANOVA Comparison of Stepwise and Interaction Models"
 
-anova_df <- as.data.frame(anova_result)
+library(dplyr)  # Added to ensure select() and everything() are available
+anova_df <- as.data.frame(anova_result) %>%
+  mutate(Model = c("Stepwise", "Interaction")) %>%
+  select(Model, everything())  # Reordering: Model first, then all other columns
 
 anova_df %>%
   gt() %>%
   tab_header(
     title = "ANOVA Comparison of Models",
-    subtitle = "Step Model vs. Interaction Model"
+    subtitle = "Stepwise vs. Interaction Model"
   ) %>%
   cols_label(
+    Model = "Model",
     `Res.Df` = "Residual DF",
     RSS = "Residual Sum of Squares",
     Df = "Degrees of Freedom",
