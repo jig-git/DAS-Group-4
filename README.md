@@ -16,6 +16,7 @@ In the report, we analysed BMI trends in Scotland between 2008 and 2012 using th
 - `output/Group_4_Analysis.html`: This contains our full rendered HTML report, and is included for reference.
 - `.gitignore`: We use this file to exclude unnecessary files (e.g., `.RData`, `.Rhistory`, `.DS_Store`).
 - `README.md`: This file.
+- `Group_4_Analysis_files`: This contains all of Quarto's necessary files for rendering.
 
 ## How to Use
 To replicate our analysis, follow the following steps:
