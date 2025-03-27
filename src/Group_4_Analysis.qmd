@@ -14,7 +14,7 @@ format:
 
 library(tidymodels)
 library(readr)
-DAProject8 <- read_csv("data/DAProject8.csv")
+DAProject8 <- read_csv("../data/DAProject8.csv")
 ```
 
 # Introduction {#sec-intro}
@@ -148,7 +148,7 @@ Figure @fig-bmi-hist displays the overall BMI distribution.
 
 bmi_hist <- ggplot(DAProject8, aes(x = BMI)) +
   geom_histogram(binwidth = 2, fill = "dodgerblue4", color = "white") +
-  labs(title = "Distribution of BMI in Scotland (2008-2012)",
+  labs(title = "Distribution of BMI\n(2008-2012)",
        x = "BMI", y = "Count")
 bmi_hist
 ```
@@ -203,7 +203,7 @@ bmi_diet_box <- ggplot(DAProject8, aes(x = Year, y = BMI, fill = Veg_Fruit)) +
                                "Yes/No" = "lightgoldenrod1", 
                                "No/Yes" = "lightskyblue", 
                                "No/No" = "firebrick3")) +
-  labs(title = "BMI by Year, Vegetable, and Fruit Intake",
+  labs(title = "BMI by Year,Vegetable,\nand Fruit Intake",
        x = "Year", y = "BMI", fill = "Veg/Fruit")
 bmi_diet_box
 ```
@@ -322,8 +322,9 @@ To ensure that regression assumptions hold, we analyse residuals depicted in @fi
 #| fig-width: 4
 #| fig-height: 4
 
-par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
-plot(step_model)
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma=c(0,0,3,0))
+plot(step_model, which=1:4, sub.caption = "")
+mtext("Evaluating Regression Model Assumptions", outer=TRUE, cex=1.2)
 par(mfrow = c(1, 1))
 ```
 
