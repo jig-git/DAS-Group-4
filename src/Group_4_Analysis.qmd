@@ -14,7 +14,7 @@ format:
 
 library(tidymodels)
 library(readr)
-DAProject8 <- read_csv("DAProject8.csv")
+DAProject8 <- read_csv("data/DAProject8.csv")
 ```
 
 # Introduction {#sec-intro}
