@@ -1,1 +1,18 @@
+# R-specific ignores
+*.Rproj          # RStudio project files
+.Rhistory        # R command history
+.RData           # R workspace data
+.Rproj.user/     # RStudio temp files
+
+# Quarto-specific ignores
+*.qmd.cache/     # Quarto cache
+*.qmd_files/     # Quarto temp files
+
+# Generated outputs (except in output/)
+*.html           # Rendered reports
+!output/*.html   # Allow HTML files in output/ folder
+
+# System files
+.DS_Store        # macOS system file
+Thumbs.db        # Windows system file
 
